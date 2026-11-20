@@ -184,7 +184,8 @@
         "nous": false
       }
     ],
-    "majLe": "2026-11-20"
+    "majLe": "2026-11-20",
+    "classementLe": "2026-11-20"
   },
   {
     "id": "feminines",
@@ -242,43 +243,44 @@
     ],
     "classement": [
       {
-        "equipe": "Rst Etampes/arpajon F+18",
-        "pts": 0,
-        "j": 0,
+        "equipe": "Rst Etampes/Arpajon F+18",
+        "pts": 19,
+        "j": 5,
         "nous": false
       },
       {
         "equipe": "Racing Nanterre Rugby",
-        "pts": 0,
-        "j": 0,
+        "pts": 16,
+        "j": 4,
         "nous": true
       },
       {
-        "equipe": "Rugby Club Du Pays de Nemours",
-        "pts": 0,
-        "j": 0,
+        "equipe": "RC du Pays de Nemours",
+        "pts": 15,
+        "j": 4,
         "nous": false
       },
       {
-        "equipe": "Rst Pontault/lagny/gto F+18",
-        "pts": 0,
-        "j": 0,
+        "equipe": "Rst Pontault/Lagny/GTO F+18",
+        "pts": 9,
+        "j": 4,
         "nous": false
       },
       {
-        "equipe": "Rst Montigny/versailles F+18",
-        "pts": 0,
-        "j": 0,
+        "equipe": "Rst Montigny/Versailles F+18",
+        "pts": 4,
+        "j": 4,
         "nous": false
       },
       {
-        "equipe": "Rst Melun/ruguby Sud 77 F+18",
-        "pts": 0,
-        "j": 0,
+        "equipe": "Rst Melun/Rugby Sud 77 F+18",
+        "pts": -10,
+        "j": 5,
         "nous": false
       }
     ],
-    "majLe": "2026-11-20"
+    "majLe": "2026-11-20",
+    "classementLe": "2026-11-20"
   },
   {
     "id": "juniors",
@@ -381,44 +383,45 @@
     ],
     "classement": [
       {
-        "equipe": "Rst Gto / Lagny / Pontault M19",
-        "pts": 0,
-        "j": 0,
+        "equipe": "Rst GTO / Lagny / Pontault M19",
+        "pts": 10,
+        "j": 2,
         "nous": false
       },
       {
-        "equipe": "Rugby Club de Suresnes - Hauts De Seine",
-        "pts": 0,
-        "j": 0,
+        "equipe": "RC Suresnes - Hauts-de-Seine",
+        "pts": 10,
+        "j": 2,
         "nous": false
       },
       {
-        "equipe": "RC Paris Neuilly Sur Seine",
-        "pts": 0,
-        "j": 0,
+        "equipe": "RC Paris Neuilly-sur-Seine",
+        "pts": 10,
+        "j": 2,
         "nous": false
       },
       {
-        "equipe": "Rst Bagneux/antony M19",
+        "equipe": "Rst Bagneux/Antony M19",
         "pts": 0,
-        "j": 0,
+        "j": 2,
         "nous": false
       },
       {
         "equipe": "Rueil AC",
         "pts": 0,
-        "j": 0,
+        "j": 2,
         "nous": false
       },
       {
-        "equipe": "Rst Houilles/nanterre M19",
+        "equipe": "Rst Houilles/Nanterre M19",
         "pts": 0,
-        "j": 0,
+        "j": 2,
         "nous": true
       }
     ],
     "equipe": "Houilles/nanterre",
-    "majLe": "2026-11-20"
+    "majLe": "2026-11-20",
+    "classementLe": "2026-11-20"
   },
   {
     "id": "cadets-r1",
@@ -458,32 +461,33 @@
     ],
     "classement": [
       {
-        "equipe": "Rst Meaux/coulommiers M16",
-        "pts": 0,
-        "j": 0,
+        "equipe": "Rst Meaux/Coulommiers M16",
+        "pts": 15,
+        "j": 3,
         "nous": false
       },
       {
-        "equipe": "Rst Noisy Le Grand/champs/chelles M16",
-        "pts": 0,
-        "j": 0,
+        "equipe": "Rst Noisy-le-Grand/Champs/Chelles M16",
+        "pts": 10,
+        "j": 3,
         "nous": false
       },
       {
         "equipe": "Union Rugby Centre 78",
-        "pts": 0,
-        "j": 0,
+        "pts": 5,
+        "j": 3,
         "nous": false
       },
       {
-        "equipe": "Rst Houilles/nanterre M16",
-        "pts": 0,
-        "j": 0,
+        "equipe": "Rst Houilles/Nanterre M16",
+        "pts": -2,
+        "j": 3,
         "nous": true
       }
     ],
     "equipe": "Houilles/nanterre",
-    "majLe": "2026-11-20"
+    "majLe": "2026-11-20",
+    "classementLe": "2026-11-20"
   },
   {
     "id": "cadets-r2",
@@ -568,37 +572,38 @@
     ],
     "classement": [
       {
-        "equipe": "Rst Houilles/nanterre M16",
-        "pts": 0,
-        "j": 0,
+        "equipe": "Rst Houilles/Nanterre M16",
+        "pts": 9,
+        "j": 2,
         "nous": true
       },
       {
         "equipe": "Senlis / Chantilly M16",
-        "pts": 0,
-        "j": 0,
+        "pts": 5,
+        "j": 1,
         "nous": false
       },
       {
-        "equipe": "Rst Creteil Choisy/maisons Alfort M16",
-        "pts": 0,
-        "j": 0,
+        "equipe": "Rst Créteil Choisy/Maisons-Alfort M16",
+        "pts": 4,
+        "j": 1,
         "nous": false
       },
       {
-        "equipe": "Rugby Club de Courbevoie",
-        "pts": 0,
-        "j": 0,
+        "equipe": "RC Courbevoie",
+        "pts": 1,
+        "j": 2,
         "nous": false
       },
       {
         "equipe": "SCUF",
         "pts": 0,
-        "j": 0,
+        "j": 2,
         "nous": false
       }
     ],
     "equipe": "Houilles/nanterre",
-    "majLe": "2026-11-20"
+    "majLe": "2026-11-20",
+    "classementLe": "2026-11-20"
   }
 ]

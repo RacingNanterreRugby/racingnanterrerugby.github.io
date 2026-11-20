@@ -737,7 +737,7 @@ function afficherCompet(id, modeVoulu){
         </div>
         <div id="liste-matchs"></div>
       </div>
-      ${c.classement && c.classement.length ? `<div class="carte" id="bloc-classement"><div class="carte-corps"><h3 style="margin-bottom:.8rem">Classement</h3>
+      ${c.classement && c.classement.length ? `<div class="carte" id="bloc-classement"><div class="carte-corps"><h3 style="margin-bottom:.2rem">Classement</h3>${c.classementLe ? `<p class="muted" style="font-size:.8rem;margin-bottom:.7rem">Au ${dateCourte(c.classementLe)}</p>` : ''}
         <table class="classement"><thead><tr><th class="n">#</th><th>Équipe</th><th class="n">J</th><th class="n">Pts</th></tr></thead><tbody>
         ${[...c.classement].sort((a,b)=>b.pts-a.pts).map((e,i)=>`<tr class="${e.nous?'nous':''}"><td class="n">${i+1}</td><td>${esc(e.equipe)}</td><td class="n">${e.j}</td><td class="n"><b>${e.pts}</b></td></tr>`).join('')}
         </tbody></table></div></div>` : ''}

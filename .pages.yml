@@ -66,6 +66,7 @@ content:
           - { name: scoreNous, label: "Score Racing Nanterre (vide si pas encore joué)", type: number }
           - { name: scoreEux, label: "Score adversaire (vide si pas encore joué)", type: number }
           - { name: info, label: "Info (ex. tournoi : 3 victoires)", type: string }
+      - { name: classementLe, label: "Date du classement", type: date }
       - name: classement
         label: Classement
         type: object

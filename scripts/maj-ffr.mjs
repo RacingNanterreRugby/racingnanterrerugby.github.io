@@ -111,7 +111,7 @@ async function main() {
         modifiees++;
         c.majLe = new Date().toISOString().slice(0, 10);
       }
-      if (classement.length) c.classement = classement;
+      if (classement.length) { c.classement = classement; c.classementLe = new Date().toISOString().slice(0, 10); }
     } catch (e) {
       console.warn(`  échec, données conservées : ${e.message}`);
     }
