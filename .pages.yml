@@ -47,6 +47,7 @@ content:
       - { name: id, label: "Identifiant (ne pas modifier : seniors, juniors, feminines, edr…)", type: string, required: true }
       - { name: championnat, label: Championnat, type: string }
       - { name: categorie, label: "Catégorie liée (identifiant : seniors, m19, m16, feminines…)", type: string }
+      - { name: equipe, label: "Nom de l'équipe sur le site FFR, si différent (ex. Houilles/nanterre pour une entente)", type: string }
       - { name: majLe, label: "Dernière mise à jour FFR (automatique)", type: date }
       - { name: ffr, label: "Lien de la compétition sur le site FFR (Mon Club House, sans /calendrier-resultats à la fin)", type: string }
       - { name: widget, label: "Lien du widget Score'n'co (facultatif : classement et résultats mis à jour automatiquement)", type: string }

@@ -9,7 +9,8 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { chromium } from 'playwright';
 
 const FICHIER = new URL('../content/competitions.json', import.meta.url);
-const NOUS = /racing nanterre/i;
+const NOUS_DEFAUT = 'racing nanterre';
+let NOUS = new RegExp(NOUS_DEFAUT, 'i');
 const EXEMPT = /club exempt/i;
 
 const reDate = /^(\d{2})\/(\d{2})\/(\d{4})$/;
@@ -63,7 +64,7 @@ async function lireCompetition(page, base) {
     const lignes = await page.$$eval('table tbody tr', trs => trs.map(tr => [...tr.querySelectorAll('td')].map(td => td.innerText.trim())));
     classement = lignes
       .filter(c => c.length >= 4 && c[1])
-      .map(c => ({ equipe: c[1], pts: +c[2], j: +c[3], nous: /racing nanterre/i.test(c[1]) }))
+      .map(c => ({ equipe: c[1], pts: +c[2], j: +c[3], nous: c[1] })).map(e => ({ ...e, nous: NOUS.test(e.nous) }))
       .filter(e => !EXEMPT.test(e.equipe) && Number.isFinite(e.pts) && Number.isFinite(e.j));
   } catch (e) {
     console.warn(`  classement illisible : ${e.message}`);
@@ -79,6 +80,8 @@ async function main() {
 
   for (const c of competitions) {
     if (!c.ffr) continue;
+    // Nom sous lequel l'équipe apparaît sur le site FFR (ex. entente « Rst Houilles/nanterre »)
+    NOUS = new RegExp((c.equipe || NOUS_DEFAUT).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
     const base = c.ffr.replace(/\/(calendrier-resultats|classements)?\/?$/, '');
     console.log(`→ ${c.nom}`);
     try {

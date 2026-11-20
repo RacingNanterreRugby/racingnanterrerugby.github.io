@@ -325,7 +325,8 @@
         "j": 0,
         "nous": false
       }
-    ]
+    ],
+    "equipe": "Houilles/nanterre"
   },
   {
     "id": "cadets-r1",
@@ -360,7 +361,8 @@
         "j": 0,
         "nous": false
       }
-    ]
+    ],
+    "equipe": "Houilles/nanterre"
   },
   {
     "id": "cadets-r2",
@@ -401,6 +403,7 @@
         "j": 0,
         "nous": false
       }
-    ]
+    ],
+    "equipe": "Houilles/nanterre"
   }
 ]
