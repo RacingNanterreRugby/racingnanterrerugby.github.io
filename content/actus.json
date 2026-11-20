@@ -1,0 +1,51 @@
+[
+  {
+    "id": "joueurs-racing-92-a-nanterre",
+    "date": "2026-09-30",
+    "tag": "École de rugby",
+    "photo": "photos/r92-visite-1.jpg",
+    "titre": "Un mercredi pas comme les autres à Nanterre !",
+    "resume": "Des joueurs professionnels et Espoirs du Racing 92 sont venus partager un entraînement avec notre École de rugby.",
+    "texte": [
+      "Mercredi 30 septembre, nous avons eu la chance d’accueillir plusieurs joueurs professionnels et Espoirs du Racing 92 pour un entraînement au Racing Nanterre Rugby.",
+      "Paul Costes, Ibrahim Diallo, Nathan Hughes, ainsi que les Espoirs Maxence Cochard, formé au club, Ruan Swart et Séverin Manala étaient à nos côtés pour partager leur expérience et leur passion du rugby.",
+      "Au programme : entraînement, échanges et surtout un moment privilégié avec notre École de Rugby, qui a pu profiter d’une séance de dédicaces avec les joueurs.",
+      "Un grand merci au Racing 92 et au Département des Hauts-de-Seine de permettre ces belles rencontres entre les jeunes joueurs et les professionnels. Des moments qui font rêver, inspirent et donnent encore plus envie de progresser ! 🩵🤍💛💚",
+      "Racing Club de France Rugby · CD 92 Comité des Hauts-de-Seine de Rugby · Département des Hauts-de-Seine"
+    ],
+    "photos": [
+      {
+        "src": "photos/r92-visite-1.jpg",
+        "leg": "L'École de rugby avec les joueurs du Racing 92"
+      },
+      {
+        "src": "photos/r92-visite-2.jpg",
+        "leg": "Passe aux plus petits"
+      },
+      {
+        "src": "photos/r92-visite-3.jpg",
+        "leg": "Atelier sous les tours de La Défense"
+      },
+      {
+        "src": "photos/r92-visite-4.jpg",
+        "leg": "Ballon en main"
+      },
+      {
+        "src": "photos/r92-visite-5.jpg",
+        "leg": "Opposition avec les jeunes"
+      },
+      {
+        "src": "photos/r92-visite-6.jpg",
+        "leg": "Les consignes avant l'exercice"
+      },
+      {
+        "src": "photos/r92-visite-7.jpg",
+        "leg": "Toujours le sourire"
+      },
+      {
+        "src": "photos/r92-visite-8.jpg",
+        "leg": "Course et éclats de rire"
+      }
+    ]
+  }
+]

@@ -1,0 +1,229 @@
+[
+  {
+    "id": "seniors",
+    "categorie": "seniors",
+    "nom": "Seniors",
+    "championnat": "Régionale 3 – Championnat territorial (Île-de-France)",
+    "ffr": "https://monclubhouse.ffr.fr/clubs/racing-nanterre-rugby/competitions/ile-de-france-regionale-3-championnat-territorial/qualification-50249",
+    "widget": "",
+    "matchs": [
+      {
+        "date": "2026-10-04",
+        "adv": "RC Ballancourtois",
+        "dom": false,
+        "scoreNous": 29,
+        "scoreEux": 20,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2026-10-18",
+        "adv": "Viry Chatillon Rugby Club",
+        "dom": true,
+        "scoreNous": 53,
+        "scoreEux": 7,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2026-11-08",
+        "adv": "RC Paris 15 - 3",
+        "dom": true,
+        "scoreNous": 41,
+        "scoreEux": 12,
+        "heure": "13h30",
+        "info": ""
+      },
+      {
+        "date": "2026-11-15",
+        "adv": "Rugby Club Les Mureaux",
+        "dom": true,
+        "scoreNous": 42,
+        "scoreEux": 21,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2026-11-22",
+        "adv": "AC Bobigny 93 Rugby",
+        "dom": false,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "13h30",
+        "info": ""
+      },
+      {
+        "date": "2026-12-06",
+        "adv": "Provins Rugby Club",
+        "dom": true,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2026-12-13",
+        "adv": "RC Val de Bièvre",
+        "dom": false,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2027-01-17",
+        "adv": "RC Ballancourtois",
+        "dom": true,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2027-01-24",
+        "adv": "Viry Chatillon Rugby Club",
+        "dom": false,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2027-02-07",
+        "adv": "RC Paris 15 - 3",
+        "dom": false,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2027-02-28",
+        "adv": "Rugby Club Les Mureaux",
+        "dom": false,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2027-03-07",
+        "adv": "AC Bobigny 93 Rugby",
+        "dom": true,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2027-03-14",
+        "adv": "Provins Rugby Club",
+        "dom": false,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2027-03-28",
+        "adv": "RC Val de Bièvre",
+        "dom": true,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      }
+    ],
+    "classement": [
+      {
+        "equipe": "RC Val de Bièvre",
+        "pts": 19,
+        "j": 5,
+        "nous": false
+      },
+      {
+        "equipe": "Racing Nanterre Rugby",
+        "pts": 18,
+        "j": 4,
+        "nous": true
+      },
+      {
+        "equipe": "AC Bobigny 93 Rugby",
+        "pts": 15,
+        "j": 5,
+        "nous": false
+      },
+      {
+        "equipe": "RC Ballancourtois",
+        "pts": 9,
+        "j": 4,
+        "nous": false
+      },
+      {
+        "equipe": "Rugby Club Les Mureaux",
+        "pts": 8,
+        "j": 5,
+        "nous": false
+      },
+      {
+        "equipe": "RC Paris 15 - 3",
+        "pts": 8,
+        "j": 5,
+        "nous": false
+      },
+      {
+        "equipe": "Viry Chatillon Rugby Club",
+        "pts": 5,
+        "j": 5,
+        "nous": false
+      },
+      {
+        "equipe": "Provins Rugby Club",
+        "pts": 5,
+        "j": 5,
+        "nous": false
+      }
+    ],
+    "majLe": "2026-11-20"
+  },
+  {
+    "id": "feminines",
+    "categorie": "feminines",
+    "nom": "Féminines",
+    "championnat": "Féminines Régionales à X – Championnat territorial (Île-de-France)",
+    "ffr": "https://monclubhouse.ffr.fr/clubs/racing-nanterre-rugby/competitions/ile-de-france-feminines-regionales-a-x-championnat-territorial/brassage-50374",
+    "widget": "",
+    "matchs": [],
+    "classement": []
+  },
+  {
+    "id": "juniors",
+    "categorie": "m19",
+    "nom": "Juniors M19",
+    "championnat": "Régional 1 U19 – Championnat territorial (Île-de-France)",
+    "ffr": "https://monclubhouse.ffr.fr/clubs/racing-nanterre-rugby/competitions/ile-de-france-regional-1-u19-championnat-territorial/qualification-50474",
+    "widget": "",
+    "matchs": [],
+    "classement": []
+  },
+  {
+    "id": "cadets-r1",
+    "categorie": "m16",
+    "nom": "Cadets M16 · R1",
+    "championnat": "Régional 1 U16 – Championnat territorial (Île-de-France)",
+    "ffr": "https://monclubhouse.ffr.fr/clubs/racing-nanterre-rugby/competitions/ile-de-france-regional-1-u16-championnat-territorial/brassage-50329",
+    "widget": "",
+    "matchs": [],
+    "classement": []
+  },
+  {
+    "id": "cadets-r2",
+    "categorie": "m16",
+    "nom": "Cadets M16 · R2",
+    "championnat": "Régional 2 U16 (Île-de-France)",
+    "ffr": "https://monclubhouse.ffr.fr/clubs/racing-nanterre-rugby/competitions/ile-de-france-regional-2-u16/qualification-50478",
+    "widget": "",
+    "matchs": [],
+    "classement": []
+  }
+]

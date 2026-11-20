@@ -1,0 +1,59 @@
+{
+  "nom": "Racing Nanterre Rugby",
+  "saison": "2026-2027",
+  "slogan": "Le rugby ciel & blanc à Nanterre, de 3 ans à… pas d'âge limite.",
+  "photosAccueil": [
+    "photos/match-coup-envoi.jpg",
+    "photos/avants.jpg",
+    "photos/plaquage.jpg",
+    "photos/seniors-pluie.jpg"
+  ],
+  "photosPages": {
+    "categories": "photos/avants.jpg",
+    "competitions": "photos/plaquage.jpg",
+    "photos": "photos/seniors-pluie.jpg",
+    "comite": "photos/match-coup-envoi.jpg",
+    "contact": "photos/match-coup-envoi.jpg",
+    "boutique": "photos/joueur-casque.jpg",
+    "actualites": "photos/seniors-pluie.jpg",
+    "defaut": "photos/match-coup-envoi.jpg"
+  },
+  "adresse": "16 rue Salvador Allende, 92000 Nanterre",
+  "lienPlan": "https://www.google.com/maps/search/?api=1&query=16+rue+Salvador+Allende+92000+Nanterre",
+  "telephone": "06 85 11 40 40",
+  "email": "webmaster@racing-nanterre-rugby.com",
+  "boutiqueUrl": "https://clubshop.macron.com/mantes/racing-nanterre-rugby/merchandising",
+  "licencies": 240,
+  "inscriptionUrl": "",
+  "reseaux": {
+    "facebook": "https://www.facebook.com/share/1EEN9i9MUg/",
+    "instagram": "https://www.instagram.com/racingnanterrerugby__/"
+  },
+  "donneesExemple": false,
+  "presentation": [
+    "Club affilié à la Fédération Française de Rugby, le Racing Nanterre Rugby accueille filles et garçons dès 3 ans, en compétition comme en loisir.",
+    "Notre école de rugby est labellisée par la FFR. Pendant les vacances scolaires, nous organisons des stages pour les enfants, et notre section rugby loisir (sans contact) permet à chacun de pratiquer à son rythme."
+  ],
+  "valeurs": [
+    {
+      "ico": "🤝",
+      "titre": "Solidarité",
+      "texte": "On joue les uns pour les autres, sur le terrain comme en dehors."
+    },
+    {
+      "ico": "🎯",
+      "titre": "Respect",
+      "texte": "Des partenaires, des adversaires, de l'arbitre et des éducateurs."
+    },
+    {
+      "ico": "🔥",
+      "titre": "Engagement",
+      "texte": "Se donner à fond à l'entraînement comme le jour du match."
+    },
+    {
+      "ico": "🍻",
+      "titre": "Convivialité",
+      "texte": "La troisième mi-temps fait aussi partie du jeu."
+    }
+  ]
+}

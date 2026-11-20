@@ -1,0 +1,104 @@
+{
+  "bureau": [
+    {
+      "role": "Présidente",
+      "nom": "Sandra",
+      "photo": "",
+      "pres": true
+    },
+    {
+      "role": "Vice-président(e)",
+      "nom": "À compléter",
+      "photo": "",
+      "pres": false
+    },
+    {
+      "role": "Trésorier(e)",
+      "nom": "À compléter",
+      "photo": "",
+      "pres": false
+    },
+    {
+      "role": "Secrétaire",
+      "nom": "À compléter",
+      "photo": "",
+      "pres": false
+    }
+  ],
+  "commissions": [
+    {
+      "nom": "Commission sportive",
+      "membres": [
+        {
+          "role": "Responsable",
+          "nom": "À compléter"
+        },
+        {
+          "role": "Seniors",
+          "nom": "À compléter"
+        },
+        {
+          "role": "Juniors / Cadets",
+          "nom": "À compléter"
+        }
+      ]
+    },
+    {
+      "nom": "École de rugby",
+      "membres": [
+        {
+          "role": "Responsable EDR",
+          "nom": "À compléter"
+        },
+        {
+          "role": "Coordination éducateurs",
+          "nom": "À compléter"
+        }
+      ]
+    },
+    {
+      "nom": "Partenariats",
+      "membres": [
+        {
+          "role": "Responsable",
+          "nom": "À compléter"
+        }
+      ]
+    },
+    {
+      "nom": "Événements & buvette",
+      "membres": [
+        {
+          "role": "Responsable",
+          "nom": "À compléter"
+        }
+      ]
+    },
+    {
+      "nom": "Communication",
+      "membres": [
+        {
+          "role": "Site & réseaux",
+          "nom": "À compléter"
+        },
+        {
+          "role": "Photos",
+          "nom": "À compléter"
+        }
+      ]
+    },
+    {
+      "nom": "Arbitrage & sécurité",
+      "membres": [
+        {
+          "role": "Référent arbitrage",
+          "nom": "À compléter"
+        },
+        {
+          "role": "Référent santé",
+          "nom": "À compléter"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "seniors-domicile",
+    "titre": "Seniors – match à domicile",
+    "date": "2026-11-15",
+    "photos": [
+      {
+        "src": "photos/match-coup-envoi.jpg",
+        "leg": "Coup d'envoi sous la pluie"
+      },
+      {
+        "src": "photos/plaquage.jpg",
+        "leg": "Du combat devant"
+      },
+      {
+        "src": "photos/joueur-casque.jpg",
+        "leg": "Concentration"
+      },
+      {
+        "src": "photos/avants.jpg",
+        "leg": "Les avants en attente"
+      },
+      {
+        "src": "photos/seniors-pluie.jpg",
+        "leg": "Souffler entre deux actions"
+      }
+    ]
+  }
+]

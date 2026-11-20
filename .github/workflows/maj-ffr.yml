@@ -1,0 +1,61 @@
+# Récupère calendriers, résultats et classements sur le site de la FFR.
+# - automatiquement chaque lundi et jeudi matin
+# - ou à la demande : bouton « Mettre à jour depuis la FFR » dans l'administration (Pages CMS)
+#   ou onglet Actions de GitHub → « Mise à jour FFR » → Run workflow
+name: Mise à jour FFR
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # lundi ~7h (heure de Paris)
+    - cron: "17 6 * * 4"   # jeudi ~7h
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: "Pages CMS payload as JSON"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: maj-ffr
+  cancel-in-progress: false
+
+jobs:
+  maj:
+    runs-on: ubuntu-latest
+    outputs:
+      change: ${{ steps.commit.outputs.change }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Installer le navigateur
+        run: |
+          npm install --no-save playwright@1
+          npx playwright install --with-deps chromium
+      - name: Lire le site de la FFR
+        run: node scripts/maj-ffr.mjs
+      - id: commit
+        name: Enregistrer les changements
+        run: |
+          if git diff --quiet content/competitions.json; then
+            echo "Aucun changement."
+            echo "change=false" >> "$GITHUB_OUTPUT"
+          else
+            git config user.name "Mise à jour FFR"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add content/competitions.json
+            git commit -m "Mise à jour automatique des matchs et classements (FFR)"
+            git push
+            echo "change=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  mise-en-ligne:
+    needs: maj
+    if: needs.maj.outputs.change == 'true'
+    uses: ./.github/workflows/deploy.yml

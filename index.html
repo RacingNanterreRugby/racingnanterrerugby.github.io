@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Racing Nanterre Rugby</title>
+<meta name="description" content="Site officiel du Racing Nanterre Rugby : école de rugby, jeunes, seniors, féminines, rugby loisir.">
+<meta name="theme-color" content="#839FCB">
+<link rel="icon" href="photos/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   COULEURS DU CLUB — modifiez ici pour ajuster la charte
+   ========================================================= */
+:root{
+  --ciel:#839FCB;        /* bleu ciel du logo */
+  --ciel-clair:#E8EEF8;
+  --ciel-pale:#F4F7FC;
+  --marine:#1B2F55;      /* bleu foncé pour les textes et contrastes */
+  --marine-2:#2A4475;
+  --or:#E0A82E;          /* or du ballon */
+  --vert:#1F6B3B;        /* vert du ballon */
+  --blanc:#FFFFFF;
+  --gris:#5B6780;
+  --bord:#DCE4F1;
+  --rouge:#C2412D;
+  --radius:16px;
+  --ombre:0 1px 2px rgba(27,47,85,.06),0 8px 24px rgba(27,47,85,.08);
+  --titre:'Barlow Condensed',system-ui,sans-serif;
+  --texte:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--texte);color:var(--marine);background:var(--ciel-pale);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3,.titre{font-family:var(--titre);text-transform:uppercase;letter-spacing:.01em;line-height:1.02}
+h2{font-size:clamp(2rem,4.5vw,2.9rem)}
+h3{font-size:1.45rem}
+.surtitre{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ciel)}
+.muted{color:var(--gris)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:3px solid var(--or);outline-offset:2px;border-radius:6px}
+
+/* ---------- En-tête ---------- */
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--bord)}
+.header .wrap{display:flex;align-items:center;gap:1rem;height:72px}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand img{width:46px;height:46px}
+.brand b{font-family:var(--titre);font-size:1.35rem;text-transform:uppercase;line-height:.95;display:block}
+.brand small{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ciel)}
+.nav{margin-left:auto;display:flex;gap:.2rem}
+.nav a{text-decoration:none;font-weight:600;font-size:.9rem;padding:.55rem .72rem;border-radius:999px;color:var(--marine-2);transition:background .2s,color .2s}
+.nav a:hover{background:var(--ciel-clair)}
+.nav a.actif{background:var(--marine);color:#fff}
+.nav a.shop{border:2px solid var(--or);color:var(--marine)}
+.nav a.shop.actif{background:var(--or);border-color:var(--or)}
+.burger{display:none;margin-left:auto;width:46px;height:46px;border:0;border-radius:12px;background:var(--ciel-clair);align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;background:var(--marine);border-radius:2px;position:relative;transition:.25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.menu-ouvert .burger span{background:transparent}
+.menu-ouvert .burger span::before{top:0;transform:rotate(45deg)}
+.menu-ouvert .burger span::after{top:0;transform:rotate(-45deg)}
+
+@media (max-width:1100px){
+  .burger{display:flex}
+  .nav{position:fixed;inset:72px 0 auto 0;flex-direction:column;background:#fff;padding:1rem 1.25rem 1.5rem;gap:.3rem;border-bottom:1px solid var(--bord);box-shadow:0 20px 40px rgba(27,47,85,.15);transform:translateY(-8px);opacity:0;pointer-events:none;transition:.2s}
+  .menu-ouvert .nav{transform:none;opacity:1;pointer-events:auto}
+  .nav a{font-size:1.05rem;padding:.85rem 1rem;border-radius:12px}
+}
+
+/* ---------- Boutons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.35rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:transform .15s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-or{background:var(--or);color:var(--marine)}
+.btn-or:hover{box-shadow:0 8px 20px rgba(224,168,46,.35)}
+.btn-marine{background:var(--marine);color:#fff}
+.btn-ligne{border-color:currentColor;background:transparent}
+.btn-blanc{background:#fff;color:var(--marine)}
+
+/* ---------- Sections ---------- */
+main{min-height:70vh}
+.section{padding:clamp(3rem,7vw,5.5rem) 0}
+.section-tete{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.page-hero{background:linear-gradient(135deg,var(--marine) 0%,var(--marine-2) 55%,var(--ciel) 140%);background-size:cover;background-position:center 35%;color:#fff;padding:clamp(2.8rem,6vw,4.5rem) 0 clamp(2.4rem,5vw,3.5rem);position:relative;overflow:hidden}
+.page-hero::after{content:"";position:absolute;right:-80px;top:-60px;width:420px;height:420px;border-radius:50%;border:56px solid rgba(255,255,255,.06)}
+.page-hero h1{font-size:clamp(2.6rem,7vw,4.6rem)}
+.page-hero p{max-width:620px;margin-top:.8rem;color:#D7E1F2;font-size:1.05rem}
+.page-hero .surtitre{color:var(--or)}
+.fil{font-size:.85rem;color:#B9C8E3;margin-bottom:.8rem}
+.fil a{text-decoration:none}.fil a:hover{text-decoration:underline}
+
+/* ---------- Accueil ---------- */
+.hero{position:relative;background:var(--marine);color:#fff;overflow:hidden;min-height:min(88vh,780px);display:flex;align-items:center}
+.diapo{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.8s ease}
+.diapo.on{opacity:1;animation:kenburns 9s ease-out both}
+@keyframes kenburns{from{transform:scale(1.12)}to{transform:scale(1)}}
+.hero-voile{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,36,66,.94) 0%,rgba(27,47,85,.78) 42%,rgba(27,47,85,.15) 100%),linear-gradient(0deg,rgba(20,36,66,.6),transparent 40%)}
+.hero .wrap{position:relative;display:block;padding:clamp(4rem,10vw,7rem) 0 clamp(5rem,10vw,7rem)}
+.hero .contenu{max-width:640px}
+.hero .mini-logo{width:72px;height:72px;background:#fff;border-radius:50%;padding:6px;margin-bottom:1.2rem;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.puces{position:absolute;right:1.25rem;bottom:4.2rem;display:flex;gap:.45rem;z-index:2}
+.puces button{width:34px;height:5px;border-radius:3px;border:0;background:rgba(255,255,255,.35);padding:0}
+.puces button.on{background:var(--or)}
+@media (max-width:820px){.hero-voile{background:linear-gradient(0deg,rgba(20,36,66,.96) 15%,rgba(27,47,85,.7) 60%,rgba(27,47,85,.35) 100%)}.hero{align-items:flex-end}.puces{left:1.25rem;right:auto;top:1.2rem;bottom:auto}}
+.hero h1{font-size:clamp(3rem,9vw,6.4rem)}
+.hero h1 em{font-style:normal;color:var(--ciel)}
+.hero p{font-size:1.12rem;color:#D7E1F2;max-width:520px;margin:1.1rem 0 1.8rem}
+.hero .actions{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero .blason{justify-self:center;width:min(340px,80%);filter:drop-shadow(0 25px 50px rgba(0,0,0,.35));animation:flotte 6s ease-in-out infinite}
+.hero .blason img{background:#fff;border-radius:50%;padding:8%}
+@keyframes flotte{50%{transform:translateY(-10px)}}
+.badges{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.8rem}
+.badge{display:inline-flex;align-items:center;gap:.45rem;font-size:.82rem;font-weight:600;padding:.45rem .8rem;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18)}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--or)}
+
+.chiffres{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:-2.6rem;position:relative;z-index:2}
+.chiffre{background:#fff;border-radius:var(--radius);padding:1.3rem 1.2rem;box-shadow:var(--ombre)}
+.chiffre b{font-family:var(--titre);font-size:2.6rem;line-height:1;display:block;color:var(--marine)}
+.chiffre span{font-size:.88rem;color:var(--gris)}
+@media (max-width:820px){.chiffres{grid-template-columns:repeat(2,1fr)}}
+
+.grille{display:grid;gap:1.2rem}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:960px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+.carte{background:#fff;border-radius:var(--radius);box-shadow:var(--ombre);overflow:hidden;border:1px solid var(--bord)}
+.carte-corps{padding:1.3rem 1.3rem 1.4rem}
+a.carte{text-decoration:none;display:block;transition:transform .2s,box-shadow .2s}
+a.carte:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(27,47,85,.14)}
+
+.actu-visuel{aspect-ratio:16/9;position:relative;display:flex;align-items:flex-end;padding:1rem;color:#fff;background-size:cover;background-position:center}
+.une{display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:1fr 1fr;gap:1.2rem}
+.une a{position:relative;border-radius:var(--radius);overflow:hidden;min-height:240px;display:flex;align-items:flex-end;color:#fff;text-decoration:none;background:var(--marine)}
+.une a:first-child{grid-row:span 2;min-height:520px}
+.une .fond{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s ease}
+.une a:hover .fond{transform:scale(1.05)}
+.une a::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,36,66,.92) 0%,rgba(20,36,66,.25) 55%,transparent 100%)}
+.une .txt{position:relative;z-index:1;padding:1.4rem}
+.une h3{font-size:clamp(1.4rem,2.4vw,1.8rem);margin:.5rem 0 .3rem}
+.une a:first-child h3{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+.une p{color:#D7E1F2;font-size:.92rem}
+.une .date{color:#B9C8E3}
+.une.n1{grid-template-columns:1fr;grid-template-rows:none}.une.n1 a:first-child{min-height:480px}
+.une.n2{grid-template-rows:none;grid-template-columns:1fr 1fr}.une.n2 a{min-height:420px}
+@media (max-width:820px){.une,.une.n2{grid-template-columns:1fr;grid-template-rows:none}.une a:first-child{grid-row:auto;min-height:380px}}
+.article{max-width:760px;margin-inline:auto}
+.article p{font-size:1.08rem;margin-bottom:1.1rem;color:#2C3B57}
+.article .photo-article{border-radius:var(--radius);overflow:hidden;margin:0 0 2rem;box-shadow:var(--ombre)}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .6rem;border-radius:6px;background:var(--or);color:var(--marine)}
+.actu h3{font-size:1.35rem;margin:.5rem 0 .4rem}
+.date{font-size:.82rem;color:var(--gris);font-weight:500}
+
+.valeurs{background:#fff}
+.valeur{padding:1.5rem;border-radius:var(--radius);background:var(--ciel-pale);border:1px solid var(--bord)}
+.valeur .ico{width:48px;height:48px;border-radius:12px;background:var(--marine);color:var(--or);display:grid;place-items:center;font-size:1.4rem;margin-bottom:.9rem}
+.valeur h3{font-size:1.35rem;margin-bottom:.35rem}
+
+.bandeau{background:linear-gradient(120deg,var(--ciel) 0%,#A9BFE0 100%);color:var(--marine);border-radius:24px;padding:clamp(1.8rem,5vw,3rem);display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.bandeau h2{font-size:clamp(1.9rem,4vw,2.6rem)}
+.bandeau.avec-photo{color:#fff;background-size:cover;background-position:center 30%;min-height:260px}
+
+/* ---------- Matchs ---------- */
+.match{display:grid;grid-template-columns:86px 1fr auto;align-items:center;gap:1rem;padding:1rem 1.2rem;background:#fff;border-radius:14px;border:1px solid var(--bord)}
+.match+.match{margin-top:.6rem}
+.match .jour{text-align:center;background:var(--ciel-clair);border-radius:10px;padding:.45rem .3rem;line-height:1.1}
+.match .jour b{font-family:var(--titre);font-size:1.7rem;display:block}
+.match .jour small{font-size:.72rem;font-weight:700;text-transform:uppercase;color:var(--marine-2)}
+.match .equipes{font-weight:600}
+.match .equipes .nous{color:var(--marine)}
+.match .meta{font-size:.82rem;color:var(--gris);margin-top:.15rem}
+.score{font-family:var(--titre);font-size:1.6rem;white-space:nowrap;display:flex;align-items:center;gap:.5rem}
+.res{font-family:var(--texte);font-size:.72rem;font-weight:800;width:26px;height:26px;border-radius:7px;display:grid;place-items:center;color:#fff}
+.res.V{background:var(--vert)}.res.D{background:var(--rouge)}.res.N{background:var(--gris)}
+.heure{font-weight:700;font-size:.95rem;background:var(--marine);color:#fff;padding:.4rem .7rem;border-radius:8px}
+.lieu{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.15rem .45rem;border-radius:5px;margin-right:.35rem}
+.lieu.dom{background:#E4F1E8;color:var(--vert)}.lieu.ext{background:#FBF1DC;color:#8A6100}
+@media (max-width:560px){.match{grid-template-columns:64px 1fr;}.match .jour b{font-size:1.4rem}.match>:last-child{grid-column:2;justify-self:start}}
+
+/* ---------- Onglets ---------- */
+.onglets{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.3rem;scrollbar-width:none;margin-bottom:1.5rem}
+.onglets::-webkit-scrollbar{display:none}
+.onglet{flex:none;border:2px solid var(--bord);background:#fff;color:var(--marine-2);font-weight:600;padding:.6rem 1.1rem;border-radius:999px;transition:.2s}
+.onglet:hover{border-color:var(--ciel)}
+.onglet.actif{background:var(--marine);border-color:var(--marine);color:#fff}
+.sous-onglets .onglet{padding:.45rem .9rem;font-size:.9rem}
+
+.compet-tete{display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center;background:#fff;border-radius:var(--radius);padding:1.4rem 1.5rem;border:1px solid var(--bord);margin-bottom:1.5rem}
+.bilan{display:flex;gap:.6rem}
+.bilan div{text-align:center;min-width:62px;padding:.5rem;border-radius:12px;background:var(--ciel-pale)}
+.bilan b{font-family:var(--titre);font-size:1.8rem;display:block;line-height:1}
+.bilan small{font-size:.72rem;font-weight:600;color:var(--gris);text-transform:uppercase}
+@media (max-width:620px){.compet-tete{grid-template-columns:1fr}}
+table.classement{width:100%;border-collapse:collapse;font-size:.92rem}
+.classement th{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gris);text-align:left;padding:.6rem .5rem;border-bottom:2px solid var(--bord)}
+.classement td{padding:.65rem .5rem;border-bottom:1px solid var(--bord)}
+.classement td.n,.classement th.n{text-align:center}
+.classement tr.nous td{background:var(--ciel-clair);font-weight:700}
+.liens-ffr{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.carte-corps[style*="center"] .liens-ffr{justify-content:center}
+.btn-ffr{display:inline-flex;align-items:center;gap:.45rem;padding:.6rem 1rem;border-radius:12px;background:var(--ciel-clair);border:1px solid var(--bord);font-weight:600;font-size:.9rem;text-decoration:none;color:var(--marine);transition:.2s}
+.btn-ffr:hover{background:var(--marine);color:#fff;border-color:var(--marine)}
+.btn-ffr::after{content:"↗";font-size:.8rem;opacity:.6}
+.liens-ffr.petit .btn-ffr{padding:.5rem .8rem;font-size:.85rem}
+.source-ffr{font-size:.78rem;color:var(--gris);margin-top:.6rem}
+.demo{background:#FFF7E3;border:1px dashed var(--or);color:#7A5600;padding:.75rem 1rem;border-radius:12px;font-size:.88rem;margin-bottom:1.5rem}
+
+/* ---------- Catégories ---------- */
+.cat-visuel{height:150px;position:relative;display:flex;align-items:flex-end;justify-content:space-between;padding:1rem 1.2rem;color:#fff;overflow:hidden;background-size:cover;background-position:center 30%}
+.cat-visuel .code{font-family:var(--titre);font-size:3.4rem;line-height:.85}
+.cat-visuel .age{font-size:.82rem;font-weight:600;background:rgba(255,255,255,.18);padding:.3rem .65rem;border-radius:999px}
+.cat-groupe{margin-top:2.6rem}
+.cat-groupe:first-child{margin-top:0}
+.cat-groupe>h3{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem;font-size:1.6rem}
+.cat-groupe>h3::after{content:"";flex:1;height:2px;background:var(--bord)}
+.infos{display:grid;gap:.9rem}
+.info{display:flex;gap:.9rem;align-items:flex-start}
+.info .ico{flex:none;width:40px;height:40px;border-radius:10px;background:var(--ciel-clair);display:grid;place-items:center;font-size:1.1rem}
+.info small{display:block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gris)}
+.creneau{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 1rem;border-radius:12px;background:var(--ciel-pale);border:1px solid var(--bord)}
+.creneau+.creneau{margin-top:.5rem}
+.creneau b{font-weight:700}
+.detail-grille{display:grid;grid-template-columns:1.5fr 1fr;gap:1.5rem;align-items:start}
+@media (max-width:900px){.detail-grille{grid-template-columns:1fr}}
+.staff{display:flex;align-items:center;gap:.8rem;padding:.6rem 0}
+.staff+.staff{border-top:1px solid var(--bord)}
+
+.avatar{flex:none;width:46px;height:46px;border-radius:50%;background:var(--marine);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.95rem}
+.avatar.or{background:var(--or);color:var(--marine)}
+.avatar.ciel{background:var(--ciel)}
+
+/* ---------- Comité / organigramme ---------- */
+.organi{display:flex;flex-direction:column;align-items:center;gap:0}
+.niveau{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative;width:100%}
+.lien{width:2px;height:28px;background:var(--ciel)}
+.noeud{background:#fff;border:1px solid var(--bord);border-radius:14px;padding:1rem 1.1rem;text-align:center;box-shadow:var(--ombre);min-width:180px;max-width:240px;flex:1}
+.noeud .avatar{margin:0 auto .6rem;width:56px;height:56px;font-size:1.1rem}
+.noeud b{display:block;font-size:1rem}
+.noeud small{color:var(--gris);font-size:.82rem}
+.noeud.pres{border:2px solid var(--or)}
+.noeud.pres .avatar{background:var(--or);color:var(--marine)}
+.commission{background:#fff;border-radius:var(--radius);border:1px solid var(--bord);padding:1.2rem 1.3rem;border-top:4px solid var(--ciel)}
+.commission h3{font-size:1.25rem;margin-bottom:.3rem}
+.commission ul{list-style:none;margin-top:.6rem}
+.commission li{padding:.35rem 0;font-size:.92rem;display:flex;justify-content:space-between;gap:.5rem;border-top:1px dashed var(--bord)}
+
+/* ---------- Photothèque ---------- */
+.galerie{columns:3 260px;column-gap:1rem}
+.photo{break-inside:avoid;margin-bottom:1rem;border-radius:14px;overflow:hidden;position:relative;cursor:zoom-in;border:0;width:100%;padding:0;display:block;background:none}
+.photo .img{width:100%;display:block}
+.photo .leg{position:absolute;inset:auto 0 0 0;padding:2rem .9rem .8rem;background:linear-gradient(transparent,rgba(27,47,85,.85));color:#fff;font-size:.85rem;font-weight:600;text-align:left;opacity:0;transition:.25s}
+.photo:hover .leg,.photo:focus-visible .leg{opacity:1}
+@media (hover:none){.photo .leg{opacity:1}}
+.album{text-decoration:none;cursor:pointer;border:1px solid var(--bord);background:#fff;text-align:left;padding:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--ombre);transition:transform .2s}
+.album:hover{transform:translateY(-3px)}
+.album .couv{aspect-ratio:4/3;display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:3px}
+.album .couv>*:first-child{grid-row:span 2}
+.album .couv>*{width:100%;height:100%;object-fit:cover}
+.lightbox{position:fixed;inset:0;background:rgba(10,20,40,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem}
+.lightbox.ouvert{display:flex}
+.lightbox figure{max-width:min(1100px,100%);max-height:100%;display:flex;flex-direction:column;align-items:center}
+.lightbox .img{max-height:78vh;width:auto;max-width:100%;border-radius:10px}
+.lightbox figcaption{color:#fff;margin-top:.8rem;text-align:center;font-weight:500}
+.lb-btn{position:absolute;width:52px;height:52px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font-size:1.5rem;display:grid;place-items:center}
+.lb-btn:hover{background:rgba(255,255,255,.25)}
+.lb-fermer{top:1rem;right:1rem}.lb-prec{left:1rem;top:50%;transform:translateY(-50%)}.lb-suiv{right:1rem;top:50%;transform:translateY(-50%)}
+@media (max-width:620px){.lb-prec,.lb-suiv{top:auto;bottom:1rem;transform:none}}
+
+/* ---------- Boutique ---------- */
+.produit .visuel{aspect-ratio:1;background:var(--ciel-clair);display:grid;place-items:center}
+.produit .visuel svg{width:62%;height:auto}
+.produit .prix{font-family:var(--titre);font-size:1.6rem;color:var(--marine)}
+
+/* ---------- Contact ---------- */
+.formulaire{display:grid;gap:1rem}
+.champ label{display:block;font-size:.82rem;font-weight:600;margin-bottom:.35rem}
+.champ input,.champ select,.champ textarea{width:100%;padding:.8rem 1rem;border:2px solid var(--bord);border-radius:12px;font:inherit;background:#fff;color:var(--marine)}
+.champ input:focus,.champ select:focus,.champ textarea:focus{outline:none;border-color:var(--ciel)}
+.message-ok{background:#E4F1E8;color:var(--vert);padding:1rem;border-radius:12px;font-weight:500}
+
+/* ---------- Pied de page ---------- */
+footer{background:var(--marine);color:#C9D5EA;padding:3.5rem 0 1.5rem;margin-top:2rem}
+footer .grille{grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem}
+@media (max-width:900px){footer .grille{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){footer .grille{grid-template-columns:1fr}}
+footer h4{font-family:var(--titre);text-transform:uppercase;color:#fff;font-size:1.15rem;margin-bottom:.8rem;letter-spacing:.04em}
+footer a{text-decoration:none;display:block;padding:.2rem 0}
+footer a:hover{color:#fff}
+.reseaux{display:flex;gap:.5rem;margin-top:1rem}
+.reseaux a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;padding:0}
+.reseaux a:hover{background:var(--ciel)}
+.reseaux svg{width:18px;height:18px;fill:currentColor}
+.bas{border-top:1px solid rgba(255,255,255,.1);margin-top:2.5rem;padding-top:1.3rem;font-size:.82rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+.apparait{animation:apparait .45s ease both}
+@keyframes apparait{from{opacity:0;transform:translateY(10px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="#accueil" aria-label="Accueil Racing Nanterre Rugby">
+      <img src="photos/logo.png" alt="Blason du Racing Nanterre Rugby">
+      <span><b>Racing Nanterre</b><small>Rugby · Ciel &amp; Blanc</small></span>
+    </a>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+    <nav class="nav" aria-label="Navigation principale"></nav>
+  </div>
+</header>
+
+<main id="app" tabindex="-1"></main>
+
+<footer>
+  <div class="wrap">
+    <div class="grille" id="pied"></div>
+    <div class="bas"><span>© <span id="annee"></span> Racing Nanterre Rugby — Association loi 1901 affiliée à la FFR</span><span>Fait avec passion, en ciel &amp; blanc</span></div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie">
+  <button class="lb-btn lb-fermer" aria-label="Fermer">✕</button>
+  <button class="lb-btn lb-prec" aria-label="Photo précédente">‹</button>
+  <figure><div id="lb-media"></div><figcaption id="lb-leg"></figcaption></figure>
+  <button class="lb-btn lb-suiv" aria-label="Photo suivante">›</button>
+</div>
+
+<script>
+/* ==========================================================================
+   📝  LES CONTENUS DU SITE NE SONT PAS ICI.
+   Ils sont dans le dossier « content » (un fichier par rubrique) et se modifient
+   depuis l'espace d'administration Pages CMS — voir le fichier LISEZMOI.md.
+   ========================================================================== */
+let CLUB = {};
+async function chargerContenus(){
+  const fichiers = ['club','actus','categories','competitions','albums','boutique','comite'];
+  const lus = await Promise.all(fichiers.map(f => fetch('content/'+f+'.json', {cache:'no-cache'})
+    .then(r => { if(!r.ok) throw new Error(f); return r.json(); })));
+  const [club, actus, categories, competitions, albums, boutique, comite] = lus;
+  CLUB = { ...club, actus: actus||[], categories: categories||[], competitions: competitions||[],
+           albums: albums||[], produits: boutique||[], bureau: (comite||{}).bureau||[], commissions: (comite||{}).commissions||[],
+           reseaux: club.reseaux||{}, photosPages: club.photosPages||{}, photosAccueil: club.photosAccueil||[],
+           presentation: club.presentation||[], valeurs: club.valeurs||[] };
+}
+
+/* ======================== Moteur du site (ne pas modifier) ======================== */
+const $ = s => document.querySelector(s);
+const app = $('#app');
+const LOGO = $('.brand img').src;
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MOIS = ['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+const JOURS = ['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'];
+const d = s => new Date(s + 'T12:00:00');
+const dateLongue = s => d(s).toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+const dateCourte = s => d(s).toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'});
+const aujourdhui = new Date(); aujourdhui.setHours(0,0,0,0);
+const vide = v => v===undefined || v===null || v==='';
+const joue = m => !vide(m.scoreNous) && !vide(m.scoreEux);
+const avatar = (nom, photo, cls='') => photo ? `<img class="avatar ${cls}" src="${esc(photo)}" alt="${esc(nom)}" style="object-fit:cover;padding:0">` : `<div class="avatar ${cls}">${initiales(nom||'?')}</div>`;
+const galerieActu = a => (a.photos||[]).filter(p => p.src && p.src !== a.photo);
+const liensFFR = (c, petit) => c.ffr ? `<div class="liens-ffr${petit?' petit':''}">
+    <a class="btn-ffr" href="${esc(c.ffr)}/calendrier-resultats" target="_blank" rel="noopener"><span>📅</span>Calendrier</a>
+    <a class="btn-ffr" href="${esc(c.ffr)}/calendrier-resultats" target="_blank" rel="noopener"><span>🏉</span>Résultats</a>
+    <a class="btn-ffr" href="${esc(c.ffr)}/classements" target="_blank" rel="noopener"><span>🏆</span>Classement</a>
+  </div>` : '';
+const actusTriees = () => [...CLUB.actus].sort((a,b)=>d(b.date)-d(a.date));
+const initiales = n => !n || n.includes('compléter') ? '?' : n.split(/\s+/).map(x=>x[0]).join('').slice(0,2).toUpperCase();
+const DEGRADES = [
+  'linear-gradient(135deg,#1B2F55,#839FCB)',
+  'linear-gradient(135deg,#2A4475,#A9BFE0)',
+  'linear-gradient(135deg,#839FCB,#1B2F55)',
+  'linear-gradient(135deg,#1F6B3B,#2A4475)',
+  'linear-gradient(135deg,#1B2F55,#E0A82E)',
+];
+
+const PAGES = [
+  {id:'accueil', label:'Accueil'},
+  {id:'actualites', label:'Actus'},
+  {id:'categories', label:'Catégories'},
+  {id:'competitions', label:'Compétitions'},
+  {id:'photos', label:'Photothèque'},
+  {id:'comite', label:'Le comité'},
+  {id:'contact', label:'Contact'},
+  {id:'boutique', label:'Boutique', cls:'shop'},
+];
+
+/* Visuel de remplacement (rayures ciel & blanc + ballon) tant qu'il n'y a pas de vraie photo */
+function visuel(i, ratio='4/3', leg=''){
+  const g = DEGRADES[i % DEGRADES.length];
+  return `<div class="img" role="img" aria-label="${esc(leg)}" style="aspect-ratio:${ratio};background:${g};position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(180deg,transparent 0 22%,rgba(255,255,255,.07) 22% 44%)"></div>
+    <svg viewBox="0 0 100 60" style="position:absolute;width:38%;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-25deg);opacity:.35"><ellipse cx="50" cy="30" rx="46" ry="26" fill="none" stroke="#fff" stroke-width="3"/><path d="M50 8v44M38 22h24M38 30h24M38 38h24" stroke="#fff" stroke-width="2.5"/></svg>
+  </div>`;
+}
+function image(p, i, ratio){ return p.src ? `<img class="img" src="${esc(p.src)}" alt="${esc(p.leg)}" loading="lazy" style="${ratio?`aspect-ratio:${ratio};`:''}object-fit:cover">` : visuel(i, ratio||'4/3', p.leg); }
+const fondPhoto = (photo, voile='rgba(20,36,66,.9),rgba(27,47,85,.55)') => photo ? `background-image:linear-gradient(100deg,${voile}),url('${photo}')` : '';
+const actuFond = (a,i) => a.photo ? `background-image:url('${a.photo}')` : `background:${DEGRADES[i % DEGRADES.length]}`;
+
+function heroPage(surtitre, titre, texte, fil, photo){
+  return `<section class="page-hero" style="${fondPhoto(photo)}"><div class="wrap apparait">
+    ${fil ? `<div class="fil">${fil}</div>` : ''}
+    <div class="surtitre">${surtitre}</div><h1>${titre}</h1>${texte ? `<p>${texte}</p>` : ''}
+  </div></section>`;
+}
+
+/* ---------- Matchs ---------- */
+function tousMatchs(){
+  return CLUB.competitions.flatMap(c => c.matchs.map(m => ({...m, equipe:c.nom, compet:c.id})));
+}
+function ligneMatch(m, montrerEquipe){
+  const dt = d(m.date); const fini = joue(m);
+  let res = '';
+  if (fini){ const a = +m.scoreNous, b = +m.scoreEux; const r = a>b?'V':a<b?'D':'N';
+    res = `<div class="score"><span class="res ${r}" title="${r==='V'?'Victoire':r==='D'?'Défaite':'Nul'}">${r}</span>${m.dom?`${a} – ${b}`:`${a} – ${b}`}</div>`; }
+  else if (m.heure) res = `<span class="heure">${esc(m.heure)}</span>`;
+  else if (m.info) res = `<span class="muted" style="font-size:.85rem">${esc(m.info)}</span>`;
+  const nous = `<span class="nous">Racing Nanterre</span>`;
+  const affiche = m.dom ? `${nous} <span class="muted">vs</span> ${esc(m.adv)}` : `${esc(m.adv)} <span class="muted">vs</span> ${nous}`;
+  return `<div class="match">
+    <div class="jour"><small>${JOURS[dt.getDay()]}</small><b>${dt.getDate()}</b><small>${MOIS[dt.getMonth()]}</small></div>
+    <div><div class="equipes">${affiche}</div>
+      <div class="meta"><span class="lieu ${m.dom?'dom':'ext'}">${m.dom?'Domicile':'Extérieur'}</span>${montrerEquipe?esc(m.equipe):''}</div></div>
+    ${res || '<span></span>'}
+  </div>`;
+}
+
+/* ==================== PAGES ==================== */
+const VUES = {
+
+accueil(){
+  const prochains = tousMatchs().filter(m => d(m.date) >= aujourdhui).sort((a,b)=>d(a.date)-d(b.date)).slice(0,4);
+  const derniers = tousMatchs().filter(m => joue(m)).sort((a,b)=>d(b.date)-d(a.date)).slice(0,3);
+  const nbCat = CLUB.categories.length;
+  return `
+  <section class="hero">
+    ${(CLUB.photosAccueil||[]).map((p,i)=>`<div class="diapo ${i===0?'on':''}" style="background-image:url('${p}')"></div>`).join('')}
+    <div class="hero-voile"></div>
+    ${(CLUB.photosAccueil||[]).length>1 ? `<div class="puces">${CLUB.photosAccueil.map((p,i)=>`<button class="${i===0?'on':''}" data-d="${i}" aria-label="Photo ${i+1}"></button>`).join('')}</div>` : ''}
+    <div class="wrap apparait"><div class="contenu">
+      <img class="mini-logo" src="${LOGO}" alt="">
+      <div class="surtitre" style="color:var(--or)">Saison ${CLUB.saison}</div>
+      <h1>Racing<br><em>Nanterre</em> Rugby</h1>
+      <p>${esc(CLUB.slogan)}</p>
+      <div class="actions">
+        <a class="btn btn-or" href="#contact">Venir faire un essai</a>
+        <a class="btn btn-ligne" style="color:#fff" href="#actualites">Les actus du club</a>
+      </div>
+      <div class="badges">
+        <span class="badge"><i></i>École de rugby dès 3 ans</span>
+        <span class="badge"><i style="background:var(--ciel)"></i>Seniors · Régionale 3</span>
+        <span class="badge"><i style="background:#4CAF6E"></i>Rugby loisir sans contact</span>
+      </div>
+    </div></div>
+  </section>
+
+  <div class="wrap"><div class="chiffres apparait">
+    <div class="chiffre"><b>${nbCat}</b><span>catégories, du baby rugby aux loisirs</span></div>
+    <div class="chiffre"><b>${CLUB.licencies}</b><span>licenciés au club</span></div>
+    <div class="chiffre"><b>1★</b><span>label FFR école de rugby</span></div>
+    <div class="chiffre"><b>3</b><span>ans pour commencer le rugby</span></div>
+  </div></div>
+
+  <section class="section"><div class="wrap">
+    <div class="grille g2" style="gap:2.5rem;align-items:center">
+      <div>
+        <div class="surtitre">Le club</div>
+        <h2 style="margin:.3rem 0 1rem">Un club familial, ancré à Nanterre</h2>
+        ${CLUB.presentation.map(p=>`<p class="muted" style="margin-bottom:.8rem">${esc(p)}</p>`).join('')}
+        <div style="display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem">
+          <a class="btn btn-marine" href="#categories">Découvrir les catégories</a>
+          <a class="btn btn-ligne" href="#comite">Le comité</a>
+        </div>
+      </div>
+      <div>
+        <div class="section-tete" style="margin-bottom:1rem"><h3>Prochains matchs</h3><a href="#competitions" class="muted" style="font-weight:600;font-size:.9rem">Tout voir →</a></div>
+        ${prochains.length ? prochains.map(m=>ligneMatch(m,true)).join('') : '<p class="muted">Aucun match programmé pour le moment.</p>'}
+      </div>
+    </div>
+  </div></section>
+
+  ${CLUB.actus.length ? `<section class="section" style="padding-top:0"><div class="wrap">
+    <div class="section-tete"><div><div class="surtitre">Actualités</div><h2>À la une</h2></div><a class="btn btn-ligne" href="#actualites">Toutes les actus</a></div>
+    <div class="une n${Math.min(CLUB.actus.length,3)}">
+      ${actusTriees().slice(0,3).map((a,i)=>`<a href="#actu-${a.id}"><div class="fond" style="${actuFond(a,i)}"></div>
+        <div class="txt"><span class="tag">${esc(a.tag)}</span><h3>${esc(a.titre)}</h3><p>${esc(a.resume)}</p><div class="date" style="margin-top:.5rem">${dateCourte(a.date)}</div></div></a>`).join('')}
+    </div>
+  </div></section>` : ''}
+
+  ${derniers.length ? `<section class="section" style="padding-top:0"><div class="wrap">
+    <div class="section-tete"><div><div class="surtitre">Résultats</div><h2>Derniers matchs</h2></div><a class="btn btn-ligne" href="#competitions">Tous les résultats</a></div>
+    ${derniers.map(m=>ligneMatch(m,true)).join('')}
+  </div></section>` : ''}
+
+  <section class="section valeurs"><div class="wrap">
+    <div class="section-tete"><div><div class="surtitre">Nos valeurs</div><h2>Plus qu'un sport</h2></div></div>
+    <div class="grille g4">${CLUB.valeurs.map(v=>`<div class="valeur"><div class="ico">${v.ico}</div><h3>${esc(v.titre)}</h3><p class="muted">${esc(v.texte)}</p></div>`).join('')}</div>
+  </div></section>
+
+  <section class="section"><div class="wrap">
+    <div class="bandeau avec-photo" style="${fondPhoto('photos/avants.jpg','rgba(20,36,66,.92),rgba(27,47,85,.35)')}">
+      <div><h2>Envie de nous rejoindre ?</h2><p style="margin-top:.4rem">Venez essayer : enfants, ados, adultes, débutants comme confirmés.</p></div>
+      <div style="display:flex;gap:.7rem;flex-wrap:wrap"><a class="btn btn-or" href="#contact">Nous contacter</a><a class="btn btn-blanc" href="#boutique">La boutique</a></div>
+    </div>
+  </div></section>`;
+},
+
+categories(){
+  const groupes = [...new Set(CLUB.categories.map(c=>c.groupe))];
+  let idx = 0;
+  return heroPage('Saison '+CLUB.saison, 'Nos catégories', "Du baby rugby dès 3 ans aux seniors, en passant par les féminines et le rugby loisir : il y a une place pour chacun au Racing.", '', CLUB.photosPages.categories) +
+  `<section class="section"><div class="wrap">
+    ${groupes.map(g=>`<div class="cat-groupe"><h3>${esc(g)}</h3><div class="grille g4">
+      ${CLUB.categories.filter(c=>c.groupe===g).map(c=>`<a class="carte" href="#cat-${c.id}">
+        <div class="cat-visuel" style="${c.photo ? fondPhoto(c.photo,'rgba(20,36,66,.75),rgba(20,36,66,.15)') : 'background:'+DEGRADES[idx % DEGRADES.length]}" data-i="${idx++}"><span class="code">${esc(c.nom)}</span><span class="age">${esc(c.age)}</span></div>
+        <div class="carte-corps"><h3>${esc(c.titre)}</h3><p class="muted" style="font-size:.92rem;margin-top:.3rem">${esc(c.description)}</p>
+        <p style="margin-top:.8rem;font-weight:600;font-size:.88rem">${c.entrainements.map(e=>e.jour).join(' · ')} →</p></div>
+      </a>`).join('')}
+    </div></div>`).join('')}
+  </div></section>`;
+},
+
+categorie(id){
+  const c = CLUB.categories.find(x=>x.id===id);
+  if (!c) return VUES.introuvable();
+  const compets = CLUB.competitions.filter(x=>(x.categorie||x.id)===c.id);
+  const compet = compets.find(x=>x.matchs && x.matchs.length) || null;
+  const avenir = compet ? compet.matchs.filter(m=>d(m.date)>=aujourdhui).sort((a,b)=>d(a.date)-d(b.date)).slice(0,3) : [];
+  const mail = c.email || CLUB.email; const tel = c.tel || CLUB.telephone;
+  return heroPage(c.groupe, c.titre + ` <span style="color:var(--ciel)">${esc(c.nom)}</span>`, esc(c.description),
+    `<a href="#accueil">Accueil</a> › <a href="#categories">Catégories</a> › ${esc(c.titre)}`, c.photo || CLUB.photosPages.categories) +
+  `<section class="section"><div class="wrap detail-grille">
+    <div class="grille" style="gap:1.5rem">
+      <div class="carte"><div class="carte-corps">
+        <h3 style="margin-bottom:1rem">Entraînements</h3>
+        ${c.entrainements.map(e=>`<div class="creneau"><b>${esc(e.jour)}</b><span>${esc(e.horaire)}</span></div>`).join('')}
+        <div class="info" style="margin-top:1.2rem"><div class="ico">📍</div><div><small>Lieu</small>${esc(c.lieu)} — ${esc(CLUB.adresse)}<br><a href="${CLUB.lienPlan}" target="_blank" rel="noopener" style="font-weight:600;font-size:.9rem">Voir sur le plan →</a></div></div>
+        <div class="info" style="margin-top:.9rem"><div class="ico">🎂</div><div><small>Âge</small>${esc(c.age)}</div></div>
+      </div></div>
+      ${compets.length ? `<div class="carte"><div class="carte-corps">
+        <h3 style="margin-bottom:.3rem">Compétitions officielles</h3>
+        ${compets.map(x=>`<div style="margin-top:1rem"><b>${esc(x.championnat)}</b>${liensFFR(x, true)}</div>`).join('')}
+      </div></div>` : ''}
+      ${compet ? `<div class="carte"><div class="carte-corps">
+        <div class="section-tete" style="margin-bottom:1rem"><h3>Prochaines rencontres</h3><a href="#competitions" class="muted" style="font-weight:600;font-size:.9rem">Calendrier complet →</a></div>
+        <p class="muted" style="margin:-.6rem 0 1rem;font-size:.9rem">${esc(compet.championnat)}</p>
+        ${avenir.length ? avenir.map(m=>ligneMatch(m)).join('') : '<p class="muted">Pas de rencontre programmée.</p>'}
+      </div></div>` : ''}
+      ${(c.photos||[]).length ? `<div class="carte"><div class="carte-corps">
+        <h3 style="margin-bottom:1rem">En images</h3>
+        <div class="galerie" id="galerie-cat" style="columns:2 200px">${c.photos.map((p,i)=>`<button class="photo" data-i="${i}" aria-label="Agrandir : ${esc(p.leg||c.titre)}"><img class="img" src="${esc(p.src)}" alt="${esc(p.leg||c.titre)}" loading="lazy">${p.leg?`<span class="leg">${esc(p.leg)}</span>`:''}</button>`).join('')}</div>
+      </div></div>` : ''}
+    </div>
+    <aside class="grille" style="gap:1.5rem">
+      <div class="carte"><div class="carte-corps">
+        <h3 style="margin-bottom:.8rem">Encadrement</h3>
+        ${(c.staff||[]).map((s,i)=>`<div class="staff">${avatar(s.nom, s.photo, i===0?'or':'ciel')}<div><b>${esc(s.nom)}</b><div class="muted" style="font-size:.85rem">${esc(s.role)}</div></div></div>`).join('') || '<p class="muted">Encadrement à venir.</p>'}
+      </div></div>
+      <div class="carte" style="background:var(--marine);color:#fff;border:0"><div class="carte-corps">
+        <h3 style="margin-bottom:.8rem">Contact</h3>
+        <div class="infos">
+          <div class="info"><div class="ico" style="background:rgba(255,255,255,.1)">✉️</div><div><small style="color:#A9BFE0">E-mail</small><a href="mailto:${esc(mail)}">${esc(mail)}</a></div></div>
+          <div class="info"><div class="ico" style="background:rgba(255,255,255,.1)">📞</div><div><small style="color:#A9BFE0">Téléphone</small><a href="tel:${esc(tel.replace(/\s/g,''))}">${esc(tel)}</a></div></div>
+        </div>
+        <a class="btn btn-or" style="margin-top:1.3rem;width:100%;justify-content:center" href="#contact" data-cat="${c.id}">Demander un essai</a>
+      </div></div>
+    </aside>
+  </div></section>`;
+},
+
+competitions(){
+  return heroPage('Saison '+CLUB.saison, 'Compétitions', 'Calendriers, résultats et classements de toutes nos équipes engagées.', '', CLUB.photosPages.competitions) +
+  `<section class="section"><div class="wrap">
+    ${CLUB.donneesExemple ? `<div class="demo">⚠️ Les matchs et résultats affichés sont des <b>exemples</b> : remplacez-les par les vrais dans le menu « Compétitions » de l'administration.</div>` : ''}
+    <div class="onglets" role="tablist" id="ong-compet">
+      ${CLUB.competitions.map((c,i)=>`<button class="onglet ${i===0?'actif':''}" role="tab" data-c="${c.id}">${esc(c.nom)}</button>`).join('')}
+    </div>
+    <div id="compet-contenu"></div>
+  </div></section>`;
+},
+
+photos(){
+  return heroPage('Photothèque', 'En images', 'Matchs, tournois, stages et moments de vie du club.', '', CLUB.photosPages.photos) +
+  `<section class="section"><div class="wrap">
+    <div class="onglets" id="ong-albums">
+      <button class="onglet actif" data-a="">Tous les albums</button>
+      ${CLUB.albums.map(a=>`<button class="onglet" data-a="${a.id}">${esc(a.titre)}</button>`).join('')}
+    </div>
+    <div id="photos-contenu"></div>
+  </div></section>`;
+},
+
+boutique(){
+  return heroPage('Boutique officielle · Macron', 'Portez le ciel &amp; blanc', 'Maillots, sweats et accessoires aux couleurs du club, sur la boutique officielle de notre équipementier Macron.', '', CLUB.photosPages.boutique) +
+  `<section class="section"><div class="wrap">
+    <div class="bandeau" style="margin-bottom:2.5rem">
+      <div><h2>La boutique en ligne</h2><p style="margin-top:.4rem">Tous les produits officiels du club sur la boutique Macron.</p></div>
+      <a class="btn btn-marine" href="${esc(CLUB.boutiqueUrl)}" target="_blank" rel="noopener">Accéder à la boutique ↗</a>
+    </div>
+    <div class="section-tete"><div><div class="surtitre">Au rayon</div><h2>Les incontournables</h2></div></div>
+    <div class="grille g4">
+      ${CLUB.produits.map(p=>`<a class="carte produit" href="${esc(CLUB.boutiqueUrl)}" target="_blank" rel="noopener">
+        <div class="visuel">${PICTOS[p.forme] || PICTOS.maillot}</div>
+        <div class="carte-corps"><h3>${esc(p.nom)}</h3><div style="display:flex;justify-content:space-between;align-items:center;margin-top:.4rem"><span class="prix">${esc(p.prix)}</span><span class="muted" style="font-weight:600;font-size:.88rem">Voir ↗</span></div></div>
+      </a>`).join('')}
+    </div>
+  </div></section>`;
+},
+
+comite(){
+  const pres = CLUB.bureau.filter(b=>b.pres), autres = CLUB.bureau.filter(b=>!b.pres);
+  const noeud = (b,cls='') => `<div class="noeud ${cls}">${avatar(b.nom, b.photo)}<b>${esc(b.nom)}</b><small>${esc(b.role)}</small></div>`;
+  return heroPage('Organisation', 'Le comité', "Les bénévoles qui font vivre le club au quotidien. Merci à eux !", '', CLUB.photosPages.comite) +
+  `<section class="section"><div class="wrap">
+    <div class="section-tete"><div><div class="surtitre">Organigramme</div><h2>Le bureau</h2></div></div>
+    <div class="organi">
+      <div class="niveau">${pres.map(b=>noeud(b,'pres')).join('')}</div>
+      <div class="lien"></div>
+      <div class="niveau">${autres.map(b=>noeud(b)).join('')}</div>
+      <div class="lien"></div>
+      <div class="niveau"><div class="noeud" style="max-width:none;background:var(--marine);color:#fff;border:0"><b>Comité directeur &amp; commissions</b><small style="color:#A9BFE0">${CLUB.commissions.length} commissions</small></div></div>
+    </div>
+    <div class="grille g3" style="margin-top:2.5rem">
+      ${CLUB.commissions.map(c=>`<div class="commission"><h3>${esc(c.nom)}</h3>
+        <ul>${c.membres.map(m=>`<li><span class="muted">${esc(m.role)}</span><b>${esc(m.nom)}</b></li>`).join('')}</ul></div>`).join('')}
+    </div>
+    <div class="bandeau avec-photo" style="margin-top:3rem;${fondPhoto('photos/seniors-pluie.jpg','rgba(20,36,66,.92),rgba(27,47,85,.4)')}">
+      <div><h2>Devenez bénévole</h2><p style="margin-top:.4rem">Buvette, arbitrage, encadrement, photos… toutes les bonnes volontés sont les bienvenues.</p></div>
+      <a class="btn btn-or" href="#contact">Proposer mon aide</a>
+    </div>
+  </div></section>`;
+},
+
+contact(){
+  return heroPage('Nous écrire', 'Contact', 'Une question, un essai, un partenariat ? On vous répond rapidement.', '', CLUB.photosPages.contact) +
+  `<section class="section"><div class="wrap detail-grille">
+    <div class="carte"><div class="carte-corps" style="padding:1.6rem">
+      <h3 style="margin-bottom:1.2rem">Envoyer un message</h3>
+      <form class="formulaire" id="form-contact">
+        <div class="grille g2" style="gap:1rem">
+          <div class="champ"><label for="f-nom">Nom et prénom</label><input id="f-nom" required autocomplete="name"></div>
+          <div class="champ"><label for="f-mail">E-mail</label><input id="f-mail" type="email" required autocomplete="email"></div>
+        </div>
+        <div class="champ"><label for="f-objet">Objet</label>
+          <select id="f-objet"><option>Séance d'essai</option><option>Inscription</option><option>Partenariat</option><option>Bénévolat</option><option>Autre</option></select></div>
+        <div class="champ"><label for="f-cat">Catégorie concernée</label>
+          <select id="f-cat"><option value="">—</option>${CLUB.categories.map(c=>`<option value="${c.id}">${esc(c.titre)} (${esc(c.nom)})</option>`).join('')}</select></div>
+        <div class="champ"><label for="f-msg">Message</label><textarea id="f-msg" rows="5" required></textarea></div>
+        <button class="btn btn-or" type="submit" style="justify-self:start">Préparer l'e-mail</button>
+        <div id="form-retour"></div>
+      </form>
+    </div></div>
+    <aside class="carte" style="background:var(--marine);color:#fff;border:0"><div class="carte-corps" style="padding:1.6rem">
+      <h3 style="margin-bottom:1.2rem">Le club</h3>
+      <div class="infos">
+        <div class="info"><div class="ico" style="background:rgba(255,255,255,.1)">📍</div><div><small style="color:#A9BFE0">Adresse</small>${esc(CLUB.adresse)}<br><a href="${CLUB.lienPlan}" target="_blank" rel="noopener" style="color:var(--or);font-weight:600;font-size:.9rem">Itinéraire →</a></div></div>
+        <div class="info"><div class="ico" style="background:rgba(255,255,255,.1)">📞</div><div><small style="color:#A9BFE0">Téléphone</small><a href="tel:${CLUB.telephone.replace(/\s/g,'')}">${esc(CLUB.telephone)}</a></div></div>
+        <div class="info"><div class="ico" style="background:rgba(255,255,255,.1)">✉️</div><div><small style="color:#A9BFE0">E-mail</small><a href="mailto:${esc(CLUB.email)}">${esc(CLUB.email)}</a></div></div>
+        <div class="info"><div class="ico" style="background:rgba(255,255,255,.1)">🅿️</div><div><small style="color:#A9BFE0">Accès</small>Parking gratuit sur place</div></div>
+      </div>
+    </div></aside>
+  </div></section>`;
+},
+
+actualites(){
+  return heroPage('Vie du club', 'Actualités', 'Matchs, événements, école de rugby : toutes les nouvelles du Racing Nanterre.', '', CLUB.photosPages.actualites) +
+  `<section class="section"><div class="wrap">${CLUB.actus.length ? '' : `<div class="carte"><div class="carte-corps" style="text-align:center;padding:3rem 1.5rem"><h3>Les premières actus arrivent bientôt</h3><p class="muted" style="margin-top:.5rem">En attendant, suivez le club sur Facebook.</p><a class="btn btn-marine" style="margin-top:1.2rem" href="${esc(CLUB.reseaux.facebook)}" target="_blank" rel="noopener">Page Facebook du club ↗</a></div></div>`}<div class="grille g3">
+    ${actusTriees().map((a,i)=>`<a class="carte actu" href="#actu-${a.id}">
+      <div class="actu-visuel" style="${actuFond(a,i)}"><span class="tag">${esc(a.tag)}</span></div>
+      <div class="carte-corps"><div class="date">${dateCourte(a.date)}</div><h3>${esc(a.titre)}</h3><p class="muted">${esc(a.resume)}</p></div>
+    </a>`).join('')}
+  </div></div></section>`;
+},
+
+actu(id){
+  const a = CLUB.actus.find(x=>x.id===id); if (!a) return VUES.introuvable();
+  const autres = actusTriees().filter(x=>x.id!==id).slice(0,3);
+  return heroPage(esc(a.tag) + ' · ' + dateLongue(a.date), esc(a.titre), esc(a.resume),
+    `<a href="#accueil">Accueil</a> › <a href="#actualites">Actualités</a>`, a.photo) +
+  `<section class="section"><div class="wrap"><article class="article">
+    ${a.photo ? `<div class="photo-article"><img src="${esc(a.photo)}" alt="${esc(a.titre)}"></div>` : ''}
+    ${(a.texte||[]).map(p=>`<p>${esc(p)}</p>`).join('')}
+    ${galerieActu(a).length ? `<h3 style="margin:2.2rem 0 1rem;font-size:1.7rem">En images</h3>
+      <div class="galerie" id="galerie-actu" style="columns:3 150px">${galerieActu(a).map((p,i)=>`<button class="photo" data-i="${i}" aria-label="Agrandir : ${esc(p.leg||a.titre)}"><img class="img" src="${esc(p.src)}" alt="${esc(p.leg||a.titre)}" loading="lazy">${p.leg?`<span class="leg">${esc(p.leg)}</span>`:''}</button>`).join('')}</div>` : ''}
+    <a class="btn btn-marine" href="#actualites" style="margin-top:1rem">← Toutes les actus</a>
+  </article>
+  ${autres.length ? `<div class="section-tete" style="margin-top:4rem"><h2>À lire aussi</h2></div><div class="grille g3">
+    ${autres.map((x,i)=>`<a class="carte actu" href="#actu-${x.id}"><div class="actu-visuel" style="${actuFond(x,i)}"><span class="tag">${esc(x.tag)}</span></div>
+      <div class="carte-corps"><div class="date">${dateCourte(x.date)}</div><h3>${esc(x.titre)}</h3></div></a>`).join('')}</div>` : ''}
+  </div></section>`;
+},
+
+introuvable(){
+  return heroPage('Oups', 'Page introuvable', "Cette page n'existe pas (ou plus).") +
+  `<section class="section"><div class="wrap"><a class="btn btn-marine" href="#accueil">Retour à l'accueil</a></div></section>`;
+}
+};
+
+/* Pictos boutique (dessins simples aux couleurs du club) */
+const PICTOS = {
+  maillot:`<svg viewBox="0 0 120 120"><path d="M38 14l-26 14 10 22 12-6v62h52V44l12 6 10-22-26-14c-2 8-10 13-22 13S40 22 38 14z" fill="#E8EEF8" stroke="#1B2F55" stroke-width="3" stroke-linejoin="round"/><path d="M38 14l-26 14 10 22 12-6z" fill="#1F6B3B"/><path d="M82 14l26 14-10 22-12-6z" fill="#1F6B3B"/><path d="M17 38l5 12 12-6v-8zM103 38l-5 12-12-6v-8z" fill="#E0A82E"/><path d="M52 50v60M58 50v60" stroke="#839FCB" stroke-width="3"/><path d="M48 14c2 6 6 9 12 9s10-3 12-9" fill="none" stroke="#1B2F55" stroke-width="4"/></svg>`,
+  sweat:`<svg viewBox="0 0 120 120"><path d="M40 18c0-6 40-6 40 0l26 16-8 56-12-4v26H34V86l-12 4-8-56z" fill="#1B2F55"/><path d="M44 18c4 14 28 14 32 0" fill="#2A4475" stroke="#839FCB" stroke-width="3"/><rect x="44" y="70" width="32" height="16" rx="4" fill="#2A4475"/><circle cx="60" cy="50" r="9" fill="#839FCB"/></svg>`,
+  short:`<svg viewBox="0 0 120 120"><path d="M24 28h72l8 66H70l-10-30-10 30H16z" fill="#1B2F55"/><rect x="24" y="28" width="72" height="10" fill="#839FCB"/></svg>`,
+  chaussettes:`<svg viewBox="0 0 120 120"><path d="M40 12h26v60c0 14-6 26-22 34-10 4-22 0-22-10s8-14 18-18z" fill="#fff" stroke="#1B2F55" stroke-width="3"/><path d="M40 22h26v10H40zM40 40h26v10H40z" fill="#839FCB"/><path d="M40 12h26v6H40z" fill="#1B2F55"/></svg>`,
+};
+
+/* ---------- Comportements dynamiques ---------- */
+function afficherCompet(id){
+  const c = CLUB.competitions.find(x=>x.id===id); if(!c) return;
+  const joues = c.matchs.filter(joue);
+  const V = joues.filter(m=>+m.scoreNous>+m.scoreEux).length, D = joues.filter(m=>+m.scoreNous<+m.scoreEux).length, N = joues.length-V-D;
+  const avenir = c.matchs.filter(m=>!joue(m) && d(m.date)>=aujourdhui).sort((a,b)=>d(a.date)-d(b.date));
+  const passes = c.matchs.filter(m=>joue(m) || d(m.date)<aujourdhui).sort((a,b)=>d(b.date)-d(a.date));
+  $('#compet-contenu').innerHTML = `<div class="apparait">
+    <div class="compet-tete"><div><div class="surtitre">${esc(c.nom)}</div><h3 style="font-size:1.7rem;margin-top:.2rem">${esc(c.championnat)}</h3>
+      ${c.ffr && c.matchs.length ? `<p class="source-ffr">${c.majLe ? `Données FFR mises à jour le ${dateCourte(c.majLe)} · ` : ''}Site officiel de la FFR :</p>${liensFFR(c, true)}` : ''}</div>
+      ${joues.length ? `<div class="bilan"><div><b style="color:var(--vert)">${V}</b><small>Vict.</small></div><div><b>${N}</b><small>Nuls</small></div><div><b style="color:var(--rouge)">${D}</b><small>Déf.</small></div></div>` : ''}
+    </div>
+    <div class="${c.classement && c.classement.length ? 'detail-grille' : ''}">
+      <div>
+        <div class="onglets sous-onglets" id="ong-mode" style="${c.matchs.length?'':'display:none'}">
+          <button class="onglet actif" data-m="avenir">Calendrier (${avenir.length})</button>
+          <button class="onglet" data-m="passes">Résultats (${passes.length})</button>
+        </div>
+        <div id="liste-matchs"></div>
+      </div>
+      ${c.classement && c.classement.length ? `<div class="carte"><div class="carte-corps"><h3 style="margin-bottom:.8rem">Classement</h3>
+        <table class="classement"><thead><tr><th class="n">#</th><th>Équipe</th><th class="n">J</th><th class="n">Pts</th></tr></thead><tbody>
+        ${[...c.classement].sort((a,b)=>b.pts-a.pts).map((e,i)=>`<tr class="${e.nous?'nous':''}"><td class="n">${i+1}</td><td>${esc(e.equipe)}</td><td class="n">${e.j}</td><td class="n"><b>${e.pts}</b></td></tr>`).join('')}
+        </tbody></table></div></div>` : ''}
+    </div>
+    ${c.widget ? `<div class="carte" style="margin-top:1.5rem"><div class="carte-corps"><h3 style="margin-bottom:1rem">Classement & résultats officiels</h3>
+      <iframe src="${esc(c.widget)}" title="Classement ${esc(c.nom)}" loading="lazy" style="width:100%;min-height:640px;border:0;border-radius:12px"></iframe></div></div>` : ''}
+    </div>`;
+  const rendre = mode => {
+    const l = mode==='avenir'?avenir:passes;
+    $('#liste-matchs').innerHTML = l.length ? l.map(m=>ligneMatch(m)).join('') : (c.ffr
+      ? `<div class="carte"><div class="carte-corps" style="text-align:center;padding:2rem 1.5rem"><p class="muted">Le calendrier, les résultats et le classement de cette équipe sont sur le site officiel de la FFR.</p>${liensFFR(c)}</div></div>`
+      : `<p class="muted">${mode==='avenir'?'Aucun match à venir pour le moment.':'Pas encore de résultat cette saison.'}</p>`);
+  };
+  rendre(avenir.length ? 'avenir' : 'passes');
+  if(!avenir.length) $('#ong-mode').children[0].classList.remove('actif'), $('#ong-mode').children[1].classList.add('actif');
+  $('#ong-mode').onclick = e => { const b = e.target.closest('.onglet'); if(!b) return;
+    [...$('#ong-mode').children].forEach(x=>x.classList.toggle('actif',x===b)); rendre(b.dataset.m); };
+}
+
+let LB = {liste:[], i:0};
+function afficherPhotos(albumId){
+  const zone = $('#photos-contenu');
+  if (!albumId){
+    zone.innerHTML = `<div class="grille g3 apparait">${CLUB.albums.map((a,ai)=>`<button class="album" data-a="${a.id}">
+      <div class="couv">${a.photos.slice(0,3).map((p,i)=>image(p, ai+i, 'auto')).join('')}</div>
+      <div class="carte-corps"><h3>${esc(a.titre)}</h3><div class="date">${dateCourte(a.date)} · ${a.photos.length} photos</div></div>
+    </button>`).join('')}</div>`;
+    return;
+  }
+  const a = CLUB.albums.find(x=>x.id===albumId); const ai = CLUB.albums.indexOf(a);
+  LB.liste = a.photos.map((p,i)=>({...p, i:ai+i}));
+  const ratios = ['4/3','3/4','1/1','16/10','4/5','3/2'];
+  zone.innerHTML = `<div class="apparait"><div class="section-tete" style="margin-bottom:1.2rem"><div><h3 style="font-size:1.8rem">${esc(a.titre)}</h3><div class="date">${dateLongue(a.date)}</div></div></div>
+    <div class="galerie">${a.photos.map((p,i)=>`<button class="photo" data-i="${i}" aria-label="Agrandir : ${esc(p.leg)}">${image(p, ai+i, ratios[i%ratios.length])}<span class="leg">${esc(p.leg)}</span></button>`).join('')}</div></div>`;
+}
+function ouvrirLB(i){ LB.i = (i+LB.liste.length)%LB.liste.length; const p = LB.liste[LB.i];
+  $('#lb-media').innerHTML = p.src ? `<img class="img" src="${esc(p.src)}" alt="${esc(p.leg)}">` : `<div style="width:min(900px,92vw)">${visuel(p.i,'3/2',p.leg)}</div>`;
+  $('#lb-leg').textContent = `${p.leg} — ${LB.i+1} / ${LB.liste.length}`;
+  $('#lightbox').classList.add('ouvert'); }
+function fermerLB(){ $('#lightbox').classList.remove('ouvert'); }
+
+/* ---------- Diaporama d'accueil ---------- */
+let diaporama;
+function lancerDiaporama(){
+  const diapos = [...document.querySelectorAll('.diapo')], puces = [...document.querySelectorAll('.puces button')];
+  if (diapos.length < 2) return;
+  let n = 0;
+  const montrer = k => { n = (k + diapos.length) % diapos.length;
+    diapos.forEach((x,i)=>{ x.classList.toggle('on', i===n); if(i===n){ x.style.animation='none'; x.offsetHeight; x.style.animation=''; } });
+    puces.forEach((x,i)=>x.classList.toggle('on', i===n)); };
+  const relancer = () => { clearInterval(diaporama); diaporama = setInterval(()=>montrer(n+1), 6500); };
+  document.querySelector('.puces').onclick = e => { const b = e.target.closest('button'); if(b){ montrer(+b.dataset.d); relancer(); } };
+  relancer();
+}
+
+/* ---------- Routeur ---------- */
+let catPreselect = '';
+function route(){
+  const h = (location.hash || '#accueil').slice(1);
+  let html, actif = h, titre;
+  if (h.startsWith('actu-')){ html = VUES.actu(h.slice(5)); actif='actualites';
+    const a = CLUB.actus.find(x=>x.id===h.slice(5)); titre = a ? a.titre : ''; }
+  else if (h.startsWith('cat-')){ html = VUES.categorie(h.slice(4)); actif='categories';
+    const c = CLUB.categories.find(x=>x.id===h.slice(4)); titre = c ? c.titre : ''; }
+  else if (VUES[h] && !['categorie','actu','introuvable'].includes(h)){ html = VUES[h](); titre = (PAGES.find(p=>p.id===h)||{}).label; }
+  else { html = VUES.introuvable(); }
+  fermerLB(); clearInterval(diaporama);
+  app.innerHTML = html;
+  document.title = (titre && h!=='accueil' ? titre + ' · ' : '') + CLUB.nom;
+  document.querySelectorAll('.nav a').forEach(a=>a.classList.toggle('actif', a.getAttribute('href')==='#'+actif));
+  document.body.classList.remove('menu-ouvert'); $('.burger').setAttribute('aria-expanded','false');
+  window.scrollTo({top:0, behavior:'instant'});
+
+  if (h==='accueil') lancerDiaporama();
+  if (h.startsWith('actu-') && $('#galerie-actu')){ const a = CLUB.actus.find(x=>x.id===h.slice(5));
+    LB.liste = galerieActu(a).map(p=>({src:p.src, leg:p.leg||a.titre}));
+    $('#galerie-actu').onclick = e => { const ph=e.target.closest('.photo'); if(ph) ouvrirLB(+ph.dataset.i); }; }
+  if (h.startsWith('cat-') && $('#galerie-cat')){ const c = CLUB.categories.find(x=>x.id===h.slice(4));
+    LB.liste = c.photos.map(p=>({src:p.src, leg:p.leg||c.titre}));
+    $('#galerie-cat').onclick = e => { const ph=e.target.closest('.photo'); if(ph) ouvrirLB(+ph.dataset.i); }; }
+  if (h==='competitions'){ afficherCompet(CLUB.competitions[0].id);
+    $('#ong-compet').onclick = e => { const b=e.target.closest('.onglet'); if(!b) return;
+      [...$('#ong-compet').children].forEach(x=>x.classList.toggle('actif',x===b)); afficherCompet(b.dataset.c); }; }
+  if (h==='photos'){ afficherPhotos('');
+    const choisir = id => { [...$('#ong-albums').children].forEach(x=>x.classList.toggle('actif',x.dataset.a===id)); afficherPhotos(id); };
+    $('#ong-albums').onclick = e => { const b=e.target.closest('.onglet'); if(b) choisir(b.dataset.a); };
+    $('#photos-contenu').onclick = e => { const al=e.target.closest('.album'); if(al){ choisir(al.dataset.a); return; }
+      const ph=e.target.closest('.photo'); if(ph) ouvrirLB(+ph.dataset.i); }; }
+  if (h==='contact'){
+    if (catPreselect){ $('#f-cat').value = catPreselect; catPreselect=''; }
+    $('#form-contact').onsubmit = e => { e.preventDefault();
+      const cat = $('#f-cat').selectedOptions[0].text;
+      const corps = `${$('#f-msg').value}\n\n— ${$('#f-nom').value} (${$('#f-mail').value})${$('#f-cat').value?`\nCatégorie : ${cat}`:''}`;
+      const lien = `mailto:${CLUB.email}?subject=${encodeURIComponent('[Site] '+$('#f-objet').value)}&body=${encodeURIComponent(corps)}`;
+      $('#form-retour').innerHTML = `<div class="message-ok">Votre messagerie va s'ouvrir avec le message pré-rempli. Si rien ne s'ouvre, écrivez-nous directement à <b>${esc(CLUB.email)}</b>.</div>`;
+      location.href = lien; };
+  }
+  app.focus({preventScroll:true});
+}
+
+const ICO = {
+  facebook:'<svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4 1.7-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg>',
+  instagram:'<svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zM17.3 5.5a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zM12 2c-2.7 0-3 0-4.1.1C4.3 2.3 2.3 4.3 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.2 3.6 2.2 5.6 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.6-.2 5.6-2.2 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.2-3.6-2.2-5.6-5.8-5.8C15 2 14.7 2 12 2zm0 1.8c2.7 0 3 0 4 .1 2.7.1 4 1.4 4.1 4.1.1 1 .1 1.3.1 4s0 3-.1 4c-.1 2.7-1.4 4-4.1 4.1-1 .1-1.3.1-4 .1s-3 0-4-.1c-2.7-.1-4-1.4-4.1-4.1-.1-1-.1-1.3-.1-4s0-3 .1-4C4 5.3 5.3 4 8 3.9c1-.1 1.3-.1 4-.1z"/></svg>',
+};
+function demarrer(){
+$('.nav').innerHTML = PAGES.map(p=>`<a href="#${p.id}" class="${p.cls||''}">${p.label}</a>`).join('');
+$('.burger').onclick = () => { const o = document.body.classList.toggle('menu-ouvert'); $('.burger').setAttribute('aria-expanded', o); };
+document.addEventListener('click', e => { const a = e.target.closest('[data-cat]'); if(a) catPreselect = a.dataset.cat; });
+$('#lightbox').onclick = e => { if (e.target.closest('.lb-fermer') || e.target.id==='lightbox') fermerLB();
+  else if (e.target.closest('.lb-prec')) ouvrirLB(LB.i-1); else if (e.target.closest('.lb-suiv')) ouvrirLB(LB.i+1); };
+document.addEventListener('keydown', e => { if(!$('#lightbox').classList.contains('ouvert')) return;
+  if(e.key==='Escape') fermerLB(); if(e.key==='ArrowLeft') ouvrirLB(LB.i-1); if(e.key==='ArrowRight') ouvrirLB(LB.i+1); });
+let tx=0; $('#lightbox').addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});
+$('#lightbox').addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>50) ouvrirLB(LB.i+(dx<0?1:-1));});
+
+$('#pied').innerHTML = `
+  <div><div class="brand" style="color:#fff"><img src="${LOGO}" alt="" style="width:52px;height:52px;background:#fff;border-radius:50%;padding:3px"><span><b>Racing Nanterre</b><small>Rugby</small></span></div>
+    <p style="margin-top:1rem;font-size:.92rem;max-width:300px">${esc(CLUB.slogan)}</p>
+    <div class="reseaux">${Object.entries(CLUB.reseaux).map(([k,v])=>`<a href="${esc(v)}" target="_blank" rel="noopener" aria-label="${k}">${ICO[k]||''}</a>`).join('')}</div></div>
+  <div><h4>Le club</h4>${PAGES.slice(0,5).map(p=>`<a href="#${p.id}">${p.label}</a>`).join('')}<a href="#comite">Le comité</a></div>
+  <div><h4>Catégories</h4>${CLUB.categories.map(c=>`<a href="#cat-${c.id}">${esc(c.titre)}${c.nom && !/^(SEN|FEM|LOI)$/.test(c.nom) ? ` <span style="opacity:.6">(${esc(c.nom)})</span>` : ''}</a>`).join('')}</div>
+  <div><h4>Contact</h4><p style="font-size:.92rem">${esc(CLUB.adresse)}</p><a href="tel:${CLUB.telephone.replace(/\s/g,'')}" style="margin-top:.5rem">${esc(CLUB.telephone)}</a><a href="mailto:${esc(CLUB.email)}">${esc(CLUB.email)}</a><a href="${esc(CLUB.boutiqueUrl)}" target="_blank" rel="noopener" style="color:var(--or);font-weight:600;margin-top:.5rem">Boutique en ligne ↗</a></div>`;
+$('#annee').textContent = new Date().getFullYear();
+
+window.addEventListener('hashchange', route);
+route();
+}
+
+app.innerHTML = '<div style="min-height:70vh;display:grid;place-items:center"><img src="photos/logo.png" alt="Chargement…" style="width:90px;animation:flotte 1.5s ease-in-out infinite"></div>';
+chargerContenus().then(demarrer).catch(err => {
+  console.error(err);
+  app.innerHTML = `<section class="section"><div class="wrap"><div class="demo">Impossible de charger les contenus du site (fichier « ${esc(err.message)} »). Si vous ouvrez le fichier directement depuis votre ordinateur, utilisez plutôt le site en ligne : les navigateurs bloquent la lecture des fichiers locaux.</div></div></section>`;
+});
+</script>
+</body>
+</html>

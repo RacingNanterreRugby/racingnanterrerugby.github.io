@@ -1,0 +1,243 @@
+# Configuration de l'espace d'administration Pages CMS (https://app.pagescms.org)
+# Chaque bloc ci-dessous = un menu dans l'administration.
+
+media:
+  input: photos
+  output: photos
+  categories: [image]
+
+content:
+
+  # ------------------------------------------------------------------ ACTUALITÉS
+  - name: actus
+    label: Actualités
+    type: file
+    path: content/actus.json
+    format: json
+    list: true
+    fields:
+      - { name: titre, label: Titre, type: string, required: true }
+      - { name: date, label: Date, type: date, required: true }
+      - { name: tag, label: "Étiquette (ex. Seniors, École de rugby, Vie du club)", type: string }
+      - { name: photo, label: Photo, type: image }
+      - { name: resume, label: "Phrase d'accroche", type: text }
+      - { name: texte, label: "Paragraphes de l'article", type: text, list: true }
+      - name: photos
+        label: "Galerie photos de l'article (facultatif)"
+        type: object
+        list: true
+        fields:
+          - { name: src, label: Photo, type: image }
+          - { name: leg, label: Légende, type: string }
+      - { name: id, label: "Identifiant de la page (court, sans espace ni accent, ex. victoire-seniors-j5)", type: string, required: true }
+
+  # ------------------------------------------------------------------ COMPÉTITIONS
+  - name: competitions
+    label: Compétitions (matchs & résultats)
+    type: file
+    path: content/competitions.json
+    format: json
+    list: true
+    actions:
+      - name: maj-ffr
+        label: "🔄 Mettre à jour depuis la FFR"
+        workflow: maj-ffr.yml
+    fields:
+      - { name: nom, label: "Équipe (ex. Seniors)", type: string, required: true }
+      - { name: id, label: "Identifiant (ne pas modifier : seniors, juniors, feminines, edr…)", type: string, required: true }
+      - { name: championnat, label: Championnat, type: string }
+      - { name: categorie, label: "Catégorie liée (identifiant : seniors, m19, m16, feminines…)", type: string }
+      - { name: majLe, label: "Dernière mise à jour FFR (automatique)", type: date }
+      - { name: ffr, label: "Lien de la compétition sur le site FFR (Mon Club House, sans /calendrier-resultats à la fin)", type: string }
+      - { name: widget, label: "Lien du widget Score'n'co (facultatif : classement et résultats mis à jour automatiquement)", type: string }
+      - name: matchs
+        label: Matchs
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{date} — {adv}"
+        fields:
+          - { name: date, label: Date, type: date, required: true }
+          - { name: adv, label: Adversaire, type: string, required: true }
+          - { name: dom, label: "À domicile ?", type: boolean, default: true }
+          - { name: heure, label: "Heure du coup d'envoi (si à venir)", type: string }
+          - { name: scoreNous, label: "Score Racing Nanterre (vide si pas encore joué)", type: number }
+          - { name: scoreEux, label: "Score adversaire (vide si pas encore joué)", type: number }
+          - { name: info, label: "Info (ex. tournoi : 3 victoires)", type: string }
+      - name: classement
+        label: Classement
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{equipe} — {pts} pts"
+        fields:
+          - { name: equipe, label: Équipe, type: string }
+          - { name: pts, label: Points, type: number }
+          - { name: j, label: Matchs joués, type: number }
+          - { name: nous, label: "C'est nous ?", type: boolean }
+
+  # ------------------------------------------------------------------ CATÉGORIES
+  - name: categories
+    label: Catégories (horaires, coachs, photos)
+    type: file
+    path: content/categories.json
+    format: json
+    list: true
+    fields:
+      - { name: titre, label: "Nom complet (ex. Moins de 10 ans)", type: string, required: true }
+      - { name: nom, label: "Code court (ex. M10)", type: string }
+      - name: groupe
+        label: Groupe
+        type: select
+        options:
+          values: ["École de rugby", "Jeunes", "Adultes"]
+      - { name: age, label: "Âge / années de naissance", type: string }
+      - { name: description, label: Présentation, type: text }
+      - { name: photo, label: "Photo de la catégorie (carte et bandeau)", type: image }
+      - name: entrainements
+        label: Entraînements
+        type: object
+        list: true
+        fields:
+          - name: jour
+            label: Jour
+            type: select
+            options:
+              values: [Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche]
+          - { name: horaire, label: "Horaire (ex. 14h00 – 15h30)", type: string }
+      - { name: lieu, label: Lieu, type: string }
+      - name: staff
+        label: "Encadrement (le premier = responsable)"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{nom} — {role}"
+        fields:
+          - { name: nom, label: Prénom et nom, type: string }
+          - { name: role, label: "Rôle (ex. Éducateur, Entraîneur des avants)", type: string }
+          - { name: photo, label: Photo, type: image }
+      - { name: email, label: "E-mail de contact (vide = e-mail du club)", type: string }
+      - { name: tel, label: "Téléphone (vide = téléphone du club)", type: string }
+      - name: photos
+        label: Photos de la catégorie
+        type: object
+        list: true
+        fields:
+          - { name: src, label: Photo, type: image }
+          - { name: leg, label: Légende, type: string }
+      - { name: id, label: "Identifiant (ne pas modifier : m6, m8, seniors…)", type: string, required: true }
+
+  # ------------------------------------------------------------------ PHOTOTHÈQUE
+  - name: albums
+    label: Photothèque (albums)
+    type: file
+    path: content/albums.json
+    format: json
+    list: true
+    fields:
+      - { name: titre, label: "Titre de l'album", type: string, required: true }
+      - { name: date, label: Date, type: date }
+      - name: photos
+        label: Photos
+        type: object
+        list: true
+        fields:
+          - { name: src, label: Photo, type: image }
+          - { name: leg, label: Légende, type: string }
+      - { name: id, label: "Identifiant (court, sans espace ni accent)", type: string, required: true }
+
+  # ------------------------------------------------------------------ COMITÉ
+  - name: comite
+    label: Comité & bureau
+    type: file
+    path: content/comite.json
+    format: json
+    fields:
+      - name: bureau
+        label: Bureau
+        type: object
+        list: true
+        fields:
+          - { name: nom, label: Prénom et nom, type: string }
+          - { name: role, label: Rôle, type: string }
+          - { name: photo, label: Photo, type: image }
+          - { name: pres, label: "Président(e) ? (affiché en haut de l'organigramme)", type: boolean }
+      - name: commissions
+        label: Commissions
+        type: object
+        list: true
+        fields:
+          - { name: nom, label: Nom de la commission, type: string }
+          - name: membres
+            label: Membres
+            type: object
+            list: true
+            fields:
+              - { name: role, label: Rôle, type: string }
+              - { name: nom, label: Prénom et nom, type: string }
+
+  # ------------------------------------------------------------------ BOUTIQUE
+  - name: boutique
+    label: Boutique (vitrine)
+    type: file
+    path: content/boutique.json
+    format: json
+    list: true
+    fields:
+      - { name: nom, label: Nom, type: string }
+      - { name: prix, label: "Prix (facultatif)", type: string }
+      - name: forme
+        label: Dessin
+        type: select
+        options:
+          values: [maillot, sweat, short, chaussettes]
+
+  # ------------------------------------------------------------------ INFOS GÉNÉRALES
+  - name: club
+    label: Infos générales du club
+    type: file
+    path: content/club.json
+    format: json
+    fields:
+      - { name: nom, label: Nom du club, type: string }
+      - { name: saison, label: "Saison (ex. 2026-2027)", type: string }
+      - { name: slogan, label: Accroche, type: string }
+      - { name: photosAccueil, label: "Photos qui défilent sur l'accueil", type: image, list: true }
+      - { name: presentation, label: "Présentation du club (paragraphes)", type: text, list: true }
+      - name: valeurs
+        label: Valeurs
+        type: object
+        list: true
+        fields:
+          - { name: ico, label: "Émoji", type: string }
+          - { name: titre, label: Titre, type: string }
+          - { name: texte, label: Texte, type: text }
+      - { name: adresse, label: Adresse, type: string }
+      - { name: lienPlan, label: Lien Google Maps, type: string }
+      - { name: telephone, label: Téléphone, type: string }
+      - { name: email, label: E-mail, type: string }
+      - { name: licencies, label: Nombre de licenciés, type: number }
+      - { name: boutiqueUrl, label: Lien de la boutique en ligne, type: string }
+      - { name: inscriptionUrl, label: "Lien d'inscription / adhésion (facultatif)", type: string }
+      - name: reseaux
+        label: Réseaux sociaux
+        type: object
+        fields:
+          - { name: facebook, label: Facebook, type: string }
+          - { name: instagram, label: Instagram, type: string }
+      - name: photosPages
+        label: Photos en haut des pages
+        type: object
+        fields:
+          - { name: categories, label: Catégories, type: image }
+          - { name: competitions, label: Compétitions, type: image }
+          - { name: photos, label: Photothèque, type: image }
+          - { name: comite, label: Comité, type: image }
+          - { name: contact, label: Contact, type: image }
+          - { name: boutique, label: Boutique, type: image }
+          - { name: actualites, label: Actualités, type: image }
+          - { name: defaut, label: Par défaut, type: image }
+      - { name: donneesExemple, label: "Afficher le bandeau « résultats d'exemple » (décocher quand les vrais matchs sont saisis)", type: boolean }

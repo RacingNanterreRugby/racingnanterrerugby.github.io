@@ -1,0 +1,345 @@
+[
+  {
+    "id": "m6",
+    "groupe": "École de rugby",
+    "nom": "M6",
+    "titre": "Moins de 6 ans",
+    "age": "De 3 à 5 ans",
+    "description": "Baby rugby : éveil au ballon, à la course et au jeu collectif, par le plaisir, dès 3 ans.",
+    "photo": "",
+    "entrainements": [
+      {
+        "jour": "Samedi",
+        "horaire": "10h00 – 11h30"
+      }
+    ],
+    "lieu": "Stade du club",
+    "email": "",
+    "tel": "",
+    "staff": [
+      {
+        "nom": "À compléter",
+        "role": "Responsable de catégorie",
+        "photo": ""
+      },
+      {
+        "nom": "À compléter",
+        "role": "Éducateur",
+        "photo": ""
+      }
+    ],
+    "photos": []
+  },
+  {
+    "id": "m8",
+    "groupe": "École de rugby",
+    "nom": "M8",
+    "titre": "Moins de 8 ans",
+    "age": "Nés en 2019-2020",
+    "description": "Premiers plaquages en sécurité, jeu de passes et premiers plateaux.",
+    "photo": "",
+    "entrainements": [
+      {
+        "jour": "Mercredi",
+        "horaire": "14h00 – 15h30"
+      },
+      {
+        "jour": "Samedi",
+        "horaire": "10h00 – 11h30"
+      }
+    ],
+    "lieu": "Stade du club",
+    "email": "",
+    "tel": "",
+    "staff": [
+      {
+        "nom": "À compléter",
+        "role": "Responsable de catégorie",
+        "photo": ""
+      },
+      {
+        "nom": "À compléter",
+        "role": "Éducateur",
+        "photo": ""
+      }
+    ],
+    "photos": []
+  },
+  {
+    "id": "m10",
+    "groupe": "École de rugby",
+    "nom": "M10",
+    "titre": "Moins de 10 ans",
+    "age": "Nés en 2017-2018",
+    "description": "Rugby à effectif réduit, apprentissage du jeu au contact et des règles.",
+    "photo": "",
+    "entrainements": [
+      {
+        "jour": "Mercredi",
+        "horaire": "14h00 – 15h30"
+      },
+      {
+        "jour": "Samedi",
+        "horaire": "10h00 – 12h00"
+      }
+    ],
+    "lieu": "Stade du club",
+    "email": "",
+    "tel": "",
+    "staff": [
+      {
+        "nom": "À compléter",
+        "role": "Responsable de catégorie",
+        "photo": ""
+      },
+      {
+        "nom": "À compléter",
+        "role": "Éducateur",
+        "photo": ""
+      }
+    ],
+    "photos": []
+  },
+  {
+    "id": "m12",
+    "groupe": "École de rugby",
+    "nom": "M12",
+    "titre": "Moins de 12 ans",
+    "age": "Nés en 2015-2016",
+    "description": "Mêlées et touches simplifiées, tournois régionaux.",
+    "photo": "",
+    "entrainements": [
+      {
+        "jour": "Mercredi",
+        "horaire": "15h30 – 17h00"
+      },
+      {
+        "jour": "Samedi",
+        "horaire": "10h00 – 12h00"
+      }
+    ],
+    "lieu": "Stade du club",
+    "email": "",
+    "tel": "",
+    "staff": [
+      {
+        "nom": "À compléter",
+        "role": "Responsable de catégorie",
+        "photo": ""
+      },
+      {
+        "nom": "À compléter",
+        "role": "Éducateur",
+        "photo": ""
+      }
+    ],
+    "photos": []
+  },
+  {
+    "id": "m14",
+    "groupe": "École de rugby",
+    "nom": "M14",
+    "titre": "Moins de 14 ans",
+    "age": "Nés en 2013-2014",
+    "description": "Passage au rugby à XV progressif, championnat territorial.",
+    "photo": "",
+    "entrainements": [
+      {
+        "jour": "Mercredi",
+        "horaire": "17h00 – 18h30"
+      },
+      {
+        "jour": "Vendredi",
+        "horaire": "18h00 – 19h30"
+      }
+    ],
+    "lieu": "Stade du club",
+    "email": "",
+    "tel": "",
+    "staff": [
+      {
+        "nom": "À compléter",
+        "role": "Responsable de catégorie",
+        "photo": ""
+      },
+      {
+        "nom": "À compléter",
+        "role": "Éducateur",
+        "photo": ""
+      }
+    ],
+    "photos": []
+  },
+  {
+    "id": "m16",
+    "groupe": "Jeunes",
+    "nom": "M16",
+    "titre": "Cadets",
+    "age": "Nés en 2011-2012",
+    "description": "Rugby à XV, préparation physique et championnats Régional 1 et Régional 2 U16 en Île-de-France.",
+    "photo": "",
+    "entrainements": [
+      {
+        "jour": "Mercredi",
+        "horaire": "18h30 – 20h00"
+      },
+      {
+        "jour": "Vendredi",
+        "horaire": "18h30 – 20h00"
+      }
+    ],
+    "lieu": "Stade du club",
+    "email": "",
+    "tel": "",
+    "staff": [
+      {
+        "nom": "À compléter",
+        "role": "Responsable de catégorie",
+        "photo": ""
+      },
+      {
+        "nom": "À compléter",
+        "role": "Entraîneur",
+        "photo": ""
+      }
+    ],
+    "photos": []
+  },
+  {
+    "id": "m19",
+    "groupe": "Jeunes",
+    "nom": "M19",
+    "titre": "Juniors",
+    "age": "Nés en 2008-2010",
+    "description": "L'équipe Junior évolue en Régional 1 U19 – Championnat territorial Île-de-France. Dernière marche avant les seniors.",
+    "photo": "",
+    "entrainements": [
+      {
+        "jour": "Mardi",
+        "horaire": "19h30 – 21h00"
+      },
+      {
+        "jour": "Jeudi",
+        "horaire": "19h30 – 21h00"
+      }
+    ],
+    "lieu": "Stade du club",
+    "email": "",
+    "tel": "",
+    "staff": [
+      {
+        "nom": "À compléter",
+        "role": "Responsable de catégorie",
+        "photo": ""
+      },
+      {
+        "nom": "À compléter",
+        "role": "Entraîneur",
+        "photo": ""
+      }
+    ],
+    "photos": []
+  },
+  {
+    "id": "seniors",
+    "groupe": "Adultes",
+    "nom": "SEN",
+    "titre": "Seniors",
+    "age": "18 ans et plus",
+    "description": "L'équipe Senior évolue en Régionale 3 – Championnat territorial Île-de-France. Ambiance, combat et troisième mi-temps.",
+    "photo": "photos/avants.jpg",
+    "entrainements": [
+      {
+        "jour": "Mardi",
+        "horaire": "20h00 – 22h00"
+      },
+      {
+        "jour": "Jeudi",
+        "horaire": "20h00 – 22h00"
+      }
+    ],
+    "lieu": "Stade du club",
+    "email": "",
+    "tel": "",
+    "staff": [
+      {
+        "nom": "À compléter",
+        "role": "Responsable de catégorie",
+        "photo": ""
+      },
+      {
+        "nom": "À compléter",
+        "role": "Entraîneur",
+        "photo": ""
+      },
+      {
+        "nom": "À compléter",
+        "role": "Entraîneur",
+        "photo": ""
+      }
+    ],
+    "photos": []
+  },
+  {
+    "id": "feminines",
+    "groupe": "Adultes",
+    "nom": "FEM",
+    "titre": "Féminines",
+    "age": "Dès 18 ans",
+    "description": "L'équipe des filles du Racing évolue en Féminines Régionales à X – Championnat territorial Île-de-France. Débutantes bienvenues !",
+    "photo": "",
+    "entrainements": [
+      {
+        "jour": "Mercredi",
+        "horaire": "20h00 – 22h00"
+      }
+    ],
+    "lieu": "Stade du club",
+    "email": "",
+    "tel": "",
+    "staff": [
+      {
+        "nom": "À compléter",
+        "role": "Responsable de catégorie",
+        "photo": ""
+      },
+      {
+        "nom": "À compléter",
+        "role": "Entraîneur",
+        "photo": ""
+      }
+    ],
+    "photos": []
+  },
+  {
+    "id": "loisir",
+    "groupe": "Adultes",
+    "nom": "LOI",
+    "titre": "Rugby loisir",
+    "age": "Adultes, tous niveaux",
+    "description": "Rugby sans contact, sport santé, ouvert à tous les âges. Idéal pour (re)découvrir le rugby en douceur.",
+    "photo": "",
+    "entrainements": [
+      {
+        "jour": "Dimanche",
+        "horaire": "10h00 – 12h00"
+      }
+    ],
+    "lieu": "Stade du club",
+    "email": "",
+    "tel": "",
+    "staff": [
+      {
+        "nom": "À compléter",
+        "role": "Responsable de catégorie",
+        "photo": ""
+      },
+      {
+        "nom": "À compléter",
+        "role": "Entraîneur",
+        "photo": ""
+      }
+    ],
+    "photos": []
+  }
+]
