@@ -34,10 +34,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Installer le navigateur
-        run: |
-          npm install --no-save playwright@1
-          npx playwright install --with-deps chromium
+      - name: Installer l'outil de lecture
+        run: npm install --no-save playwright@1
       - name: Lire le site de la FFR
         run: node scripts/maj-ffr.mjs
       - id: commit
