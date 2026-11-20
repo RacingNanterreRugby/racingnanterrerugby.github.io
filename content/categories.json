@@ -212,7 +212,7 @@
     "titre": "Juniors",
     "age": "Nés en 2008-2010",
     "description": "L'équipe Junior évolue en Régional 1 U19 – Championnat territorial Île-de-France. Dernière marche avant les seniors.",
-    "photo": "",
+    "photo": "photos/juniors-passe.jpg",
     "entrainements": [
       {
         "jour": "Mardi",
@@ -238,7 +238,28 @@
         "photo": ""
       }
     ],
-    "photos": []
+    "photos": [
+      {
+        "src": "photos/juniors-passe.jpg",
+        "leg": "À la passe"
+      },
+      {
+        "src": "photos/juniors-percee.jpg",
+        "leg": "Percée devant les tribunes"
+      },
+      {
+        "src": "photos/juniors-plaquage.jpg",
+        "leg": "Duel au contact"
+      },
+      {
+        "src": "photos/juniors-ruck.jpg",
+        "leg": "Le combat au ruck"
+      },
+      {
+        "src": "photos/juniors-avants.jpg",
+        "leg": "Les avants en mouvement"
+      }
+    ]
   },
   {
     "id": "seniors",
