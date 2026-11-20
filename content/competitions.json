@@ -287,7 +287,98 @@
     "championnat": "Régional 1 U19 – Championnat territorial (Île-de-France)",
     "ffr": "https://monclubhouse.ffr.fr/clubs/racing-nanterre-rugby/competitions/ile-de-france-regional-1-u19-championnat-territorial/qualification-50474",
     "widget": "",
-    "matchs": [],
+    "matchs": [
+      {
+        "date": "2026-11-07",
+        "adv": "RC Paris Neuilly Sur Seine",
+        "dom": true,
+        "scoreNous": 14,
+        "scoreEux": 27,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2026-11-14",
+        "adv": "Rugby Club de Suresnes - Hauts De Seine",
+        "dom": false,
+        "scoreNous": 10,
+        "scoreEux": 40,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2026-11-21",
+        "adv": "Rst Gto / Lagny / Pontault M19",
+        "dom": true,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2026-12-05",
+        "adv": "Rst Bagneux/antony M19",
+        "dom": true,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2026-12-12",
+        "adv": "Rueil AC",
+        "dom": true,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2027-01-16",
+        "adv": "RC Paris Neuilly Sur Seine",
+        "dom": false,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2027-01-23",
+        "adv": "Rugby Club de Suresnes - Hauts De Seine",
+        "dom": true,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2027-01-30",
+        "adv": "Rst Gto / Lagny / Pontault M19",
+        "dom": false,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2027-02-27",
+        "adv": "Rst Bagneux/antony M19",
+        "dom": false,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2027-03-13",
+        "adv": "Rueil AC",
+        "dom": false,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      }
+    ],
     "classement": [
       {
         "equipe": "Rst Gto / Lagny / Pontault M19",
@@ -323,10 +414,11 @@
         "equipe": "Rst Houilles/nanterre M19",
         "pts": 0,
         "j": 0,
-        "nous": false
+        "nous": true
       }
     ],
-    "equipe": "Houilles/nanterre"
+    "equipe": "Houilles/nanterre",
+    "majLe": "2026-11-20"
   },
   {
     "id": "cadets-r1",
@@ -335,7 +427,35 @@
     "championnat": "Régional 1 U16 – Championnat territorial (Île-de-France)",
     "ffr": "https://monclubhouse.ffr.fr/clubs/racing-nanterre-rugby/competitions/ile-de-france-regional-1-u16-championnat-territorial/brassage-50329",
     "widget": "",
-    "matchs": [],
+    "matchs": [
+      {
+        "date": "2026-09-27",
+        "adv": "Rst Meaux/coulommiers M16",
+        "dom": true,
+        "scoreNous": 7,
+        "scoreEux": 85,
+        "heure": "10h00",
+        "info": ""
+      },
+      {
+        "date": "2026-10-04",
+        "adv": "Rst Noisy Le Grand/champs/chelles M16",
+        "dom": true,
+        "scoreNous": 12,
+        "scoreEux": 71,
+        "heure": "10h00",
+        "info": ""
+      },
+      {
+        "date": "2026-10-11",
+        "adv": "Union Rugby Centre 78",
+        "dom": false,
+        "scoreNous": 0,
+        "scoreEux": 25,
+        "heure": "10h00",
+        "info": ""
+      }
+    ],
     "classement": [
       {
         "equipe": "Rst Meaux/coulommiers M16",
@@ -359,10 +479,11 @@
         "equipe": "Rst Houilles/nanterre M16",
         "pts": 0,
         "j": 0,
-        "nous": false
+        "nous": true
       }
     ],
-    "equipe": "Houilles/nanterre"
+    "equipe": "Houilles/nanterre",
+    "majLe": "2026-11-20"
   },
   {
     "id": "cadets-r2",
@@ -371,13 +492,86 @@
     "championnat": "Régional 2 U16 (Île-de-France)",
     "ffr": "https://monclubhouse.ffr.fr/clubs/racing-nanterre-rugby/competitions/ile-de-france-regional-2-u16/qualification-50478",
     "widget": "",
-    "matchs": [],
+    "matchs": [
+      {
+        "date": "2026-11-08",
+        "adv": "SCUF",
+        "dom": false,
+        "scoreNous": 57,
+        "scoreEux": 33,
+        "heure": "11h00",
+        "info": ""
+      },
+      {
+        "date": "2026-11-15",
+        "adv": "Rugby Club de Courbevoie",
+        "dom": true,
+        "scoreNous": 36,
+        "scoreEux": 24,
+        "heure": "10h00",
+        "info": ""
+      },
+      {
+        "date": "2026-11-22",
+        "adv": "Rst Creteil Choisy/maisons Alfort M16",
+        "dom": false,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "10h00",
+        "info": ""
+      },
+      {
+        "date": "2026-12-13",
+        "adv": "Senlis / Chantilly M16",
+        "dom": true,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "10h00",
+        "info": ""
+      },
+      {
+        "date": "2027-01-17",
+        "adv": "SCUF",
+        "dom": true,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "10h00",
+        "info": ""
+      },
+      {
+        "date": "2027-01-24",
+        "adv": "Rugby Club de Courbevoie",
+        "dom": false,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "10h00",
+        "info": ""
+      },
+      {
+        "date": "2027-01-31",
+        "adv": "Rst Creteil Choisy/maisons Alfort M16",
+        "dom": true,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "10h00",
+        "info": ""
+      },
+      {
+        "date": "2027-03-14",
+        "adv": "Senlis / Chantilly M16",
+        "dom": false,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "10h00",
+        "info": ""
+      }
+    ],
     "classement": [
       {
         "equipe": "Rst Houilles/nanterre M16",
         "pts": 0,
         "j": 0,
-        "nous": false
+        "nous": true
       },
       {
         "equipe": "Senlis / Chantilly M16",
@@ -404,6 +598,7 @@
         "nous": false
       }
     ],
-    "equipe": "Houilles/nanterre"
+    "equipe": "Houilles/nanterre",
+    "majLe": "2026-11-20"
   }
 ]
