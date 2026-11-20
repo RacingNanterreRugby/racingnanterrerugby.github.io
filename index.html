@@ -210,7 +210,8 @@ table.classement{width:100%;border-collapse:collapse;font-size:.92rem}
 .carte-corps[style*="center"] .liens-ffr{justify-content:center}
 .btn-ffr{display:inline-flex;align-items:center;gap:.45rem;padding:.6rem 1rem;border-radius:12px;background:var(--ciel-clair);border:1px solid var(--bord);font-weight:600;font-size:.9rem;text-decoration:none;color:var(--marine);transition:.2s}
 .btn-ffr:hover{background:var(--marine);color:#fff;border-color:var(--marine)}
-.btn-ffr::after{content:"↗";font-size:.8rem;opacity:.6}
+.btn-ffr.interne::after{content:"→";font-size:.8rem;opacity:.6}
+.lien-ffr{font-size:.82rem;font-weight:600;color:var(--gris);display:inline-block;margin-top:.7rem}
 .liens-ffr.petit .btn-ffr{padding:.5rem .8rem;font-size:.85rem}
 .source-ffr{font-size:.78rem;color:var(--gris);margin-top:.6rem}
 .demo{background:#FFF7E3;border:1px dashed var(--or);color:#7A5600;padding:.75rem 1rem;border-radius:12px;font-size:.88rem;margin-bottom:1.5rem}
@@ -369,11 +370,12 @@ const vide = v => v===undefined || v===null || v==='';
 const joue = m => !vide(m.scoreNous) && !vide(m.scoreEux);
 const avatar = (nom, photo, cls='') => photo ? `<img class="avatar ${cls}" src="${esc(photo)}" alt="${esc(nom)}" style="object-fit:cover;padding:0">` : `<div class="avatar ${cls}">${initiales(nom||'?')}</div>`;
 const galerieActu = a => (a.photos||[]).filter(p => p.src && p.src !== a.photo);
-const liensFFR = (c, petit) => c.ffr ? `<div class="liens-ffr${petit?' petit':''}">
-    <a class="btn-ffr" href="${esc(c.ffr)}/calendrier-resultats" target="_blank" rel="noopener"><span>📅</span>Calendrier</a>
-    <a class="btn-ffr" href="${esc(c.ffr)}/calendrier-resultats" target="_blank" rel="noopener"><span>🏉</span>Résultats</a>
-    <a class="btn-ffr" href="${esc(c.ffr)}/classements" target="_blank" rel="noopener"><span>🏆</span>Classement</a>
-  </div>` : '';
+const liensFFR = (c, petit) => `<div class="liens-ffr${petit?' petit':''}">
+    <a class="btn-ffr interne" href="#compet-${c.id}-calendrier"><span>📅</span>Calendrier</a>
+    <a class="btn-ffr interne" href="#compet-${c.id}-resultats"><span>🏉</span>Résultats</a>
+    <a class="btn-ffr interne" href="#compet-${c.id}-classement"><span>🏆</span>Classement</a>
+  </div>`;
+const lienFFROfficiel = c => c.ffr ? `<a class="lien-ffr" href="${esc(c.ffr)}/calendrier-resultats" target="_blank" rel="noopener">Voir sur le site de la FFR ↗</a>` : '';
 const stadeDe = c => (CLUB.stades||[]).find(s => s.nom === c.lieu) || {};
 const actusTriees = () => [...CLUB.actus].sort((a,b)=>d(b.date)-d(a.date));
 const initiales = n => !n || n.includes('compléter') ? '?' : n.split(/\s+/).map(x=>x[0]).join('').slice(0,2).toUpperCase();
@@ -550,7 +552,7 @@ categorie(id){
       </div></div>
       ${compets.length ? `<div class="carte"><div class="carte-corps">
         <h3 style="margin-bottom:.3rem">Compétitions officielles</h3>
-        ${compets.map(x=>`<div style="margin-top:1rem"><b>${esc(x.championnat)}</b>${liensFFR(x, true)}</div>`).join('')}
+        ${compets.map(x=>`<div style="margin-top:1rem"><b>${esc(x.championnat)}</b>${liensFFR(x, true)}${lienFFROfficiel(x)}</div>`).join('')}
       </div></div>` : ''}
       ${compet ? `<div class="carte"><div class="carte-corps">
         <div class="section-tete" style="margin-bottom:1rem"><h3>Prochaines rencontres</h3><a href="#competitions" class="muted" style="font-weight:600;font-size:.9rem">Calendrier complet →</a></div>
@@ -716,7 +718,7 @@ const PICTOS = {
 };
 
 /* ---------- Comportements dynamiques ---------- */
-function afficherCompet(id){
+function afficherCompet(id, modeVoulu){
   const c = CLUB.competitions.find(x=>x.id===id); if(!c) return;
   const joues = c.matchs.filter(joue);
   const V = joues.filter(m=>+m.scoreNous>+m.scoreEux).length, D = joues.filter(m=>+m.scoreNous<+m.scoreEux).length, N = joues.length-V-D;
@@ -724,7 +726,7 @@ function afficherCompet(id){
   const passes = c.matchs.filter(m=>joue(m) || d(m.date)<aujourdhui).sort((a,b)=>d(b.date)-d(a.date));
   $('#compet-contenu').innerHTML = `<div class="apparait">
     <div class="compet-tete"><div><div class="surtitre">${esc(c.nom)}</div><h3 style="font-size:1.7rem;margin-top:.2rem">${esc(c.championnat)}</h3>
-      ${c.ffr && c.matchs.length ? `<p class="source-ffr">${c.majLe ? `Données FFR mises à jour le ${dateCourte(c.majLe)} · ` : ''}Site officiel de la FFR :</p>${liensFFR(c, true)}` : ''}</div>
+      ${c.ffr ? `<p class="source-ffr">${c.majLe ? `Données FFR mises à jour le ${dateCourte(c.majLe)}. ` : ''}${lienFFROfficiel(c)}</p>` : ''}</div>
       ${joues.length ? `<div class="bilan"><div><b style="color:var(--vert)">${V}</b><small>Vict.</small></div><div><b>${N}</b><small>Nuls</small></div><div><b style="color:var(--rouge)">${D}</b><small>Déf.</small></div></div>` : ''}
     </div>
     <div class="${c.classement && c.classement.length ? 'detail-grille' : ''}">
@@ -735,7 +737,7 @@ function afficherCompet(id){
         </div>
         <div id="liste-matchs"></div>
       </div>
-      ${c.classement && c.classement.length ? `<div class="carte"><div class="carte-corps"><h3 style="margin-bottom:.8rem">Classement</h3>
+      ${c.classement && c.classement.length ? `<div class="carte" id="bloc-classement"><div class="carte-corps"><h3 style="margin-bottom:.8rem">Classement</h3>
         <table class="classement"><thead><tr><th class="n">#</th><th>Équipe</th><th class="n">J</th><th class="n">Pts</th></tr></thead><tbody>
         ${[...c.classement].sort((a,b)=>b.pts-a.pts).map((e,i)=>`<tr class="${e.nous?'nous':''}"><td class="n">${i+1}</td><td>${esc(e.equipe)}</td><td class="n">${e.j}</td><td class="n"><b>${e.pts}</b></td></tr>`).join('')}
         </tbody></table></div></div>` : ''}
@@ -746,11 +748,12 @@ function afficherCompet(id){
   const rendre = mode => {
     const l = mode==='avenir'?avenir:passes;
     $('#liste-matchs').innerHTML = l.length ? l.map(m=>ligneMatch(m)).join('') : (c.ffr
-      ? `<div class="carte"><div class="carte-corps" style="text-align:center;padding:2rem 1.5rem"><p class="muted">Le calendrier, les résultats et le classement de cette équipe sont sur le site officiel de la FFR.</p>${liensFFR(c)}</div></div>`
+      ? `<div class="carte"><div class="carte-corps" style="text-align:center;padding:2rem 1.5rem"><p class="muted">Le calendrier de cette équipe n'est pas encore disponible.</p>${lienFFROfficiel(c)}</div></div>`
       : `<p class="muted">${mode==='avenir'?'Aucun match à venir pour le moment.':'Pas encore de résultat cette saison.'}</p>`);
   };
-  rendre(avenir.length ? 'avenir' : 'passes');
-  if(!avenir.length) $('#ong-mode').children[0].classList.remove('actif'), $('#ong-mode').children[1].classList.add('actif');
+  const depart = modeVoulu === 'resultats' ? 'passes' : modeVoulu === 'calendrier' ? 'avenir' : (avenir.length ? 'avenir' : 'passes');
+  rendre(depart);
+  [...$('#ong-mode').children].forEach(x=>x.classList.toggle('actif', x.dataset.m===depart));
   $('#ong-mode').onclick = e => { const b = e.target.closest('.onglet'); if(!b) return;
     [...$('#ong-mode').children].forEach(x=>x.classList.toggle('actif',x===b)); rendre(b.dataset.m); };
 }
@@ -794,8 +797,11 @@ function lancerDiaporama(){
 /* ---------- Routeur ---------- */
 let catPreselect = '';
 function route(){
-  const h = (location.hash || '#accueil').slice(1);
+  let h = (location.hash || '#accueil').slice(1);
   let html, actif = h, titre;
+  let competVoulue = null, modeVoulu = null;
+  const mc = h.match(/^compet-(.+?)(?:-(calendrier|resultats|classement))?$/);
+  if (mc && CLUB.competitions.some(x=>x.id===mc[1])){ competVoulue = mc[1]; modeVoulu = mc[2] || null; h = 'competitions'; actif = 'competitions'; }
   if (h.startsWith('actu-')){ html = VUES.actu(h.slice(5)); actif='actualites';
     const a = CLUB.actus.find(x=>x.id===h.slice(5)); titre = a ? a.titre : ''; }
   else if (h.startsWith('cat-')){ html = VUES.categorie(h.slice(4)); actif='categories';
@@ -816,7 +822,10 @@ function route(){
   if (h.startsWith('cat-') && $('#galerie-cat')){ const c = CLUB.categories.find(x=>x.id===h.slice(4));
     LB.liste = c.photos.map(p=>({src:p.src, leg:p.leg||c.titre}));
     $('#galerie-cat').onclick = e => { const ph=e.target.closest('.photo'); if(ph) ouvrirLB(+ph.dataset.i); }; }
-  if (h==='competitions'){ afficherCompet(CLUB.competitions[0].id);
+  if (h==='competitions'){ const idc = competVoulue || CLUB.competitions[0].id;
+    afficherCompet(idc, modeVoulu);
+    [...$('#ong-compet').children].forEach(x=>x.classList.toggle('actif',x.dataset.c===idc));
+    if (competVoulue) setTimeout(()=>{ const cible = modeVoulu==='classement' && $('#bloc-classement') ? $('#bloc-classement') : $('#compet-contenu'); window.scrollTo({top: cible.getBoundingClientRect().top + scrollY - 90, behavior:'smooth'}); }, 80);
     $('#ong-compet').onclick = e => { const b=e.target.closest('.onglet'); if(!b) return;
       [...$('#ong-compet').children].forEach(x=>x.classList.toggle('actif',x===b)); afficherCompet(b.dataset.c); }; }
   if (h==='photos'){ afficherPhotos('');

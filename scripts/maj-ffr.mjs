@@ -60,12 +60,24 @@ async function lireCompetition(page, base) {
   try {
     await page.goto(`${base}/classements`, { waitUntil: 'domcontentloaded', timeout: 60000 });
     await page.waitForSelector('table tbody tr td', { timeout: 30000 });
-    await page.waitForTimeout(1000);
-    const lignes = await page.$$eval('table tbody tr', trs => trs.map(tr => [...tr.querySelectorAll('td')].map(td => td.innerText.trim())));
+    // Les chiffres du classement sont animés (ils partent de 0) : on attend qu'ils soient stables
+    let lignes = [], avant = '';
+    for (let essai = 0; essai < 10; essai++) {
+      await page.waitForTimeout(1500);
+      lignes = await page.$$eval('table tbody tr', trs => trs.map(tr => [...tr.querySelectorAll('td')].map(td => td.textContent.replace(/\s+/g, ' ').trim())));
+      const empreinte = JSON.stringify(lignes);
+      if (empreinte === avant && lignes.some(c => +c[2] !== 0)) break;
+      avant = empreinte;
+    }
     classement = lignes
       .filter(c => c.length >= 4 && c[1])
       .map(c => ({ equipe: c[1], pts: +c[2], j: +c[3], nous: c[1] })).map(e => ({ ...e, nous: NOUS.test(e.nous) }))
       .filter(e => !EXEMPT.test(e.equipe) && Number.isFinite(e.pts) && Number.isFinite(e.j));
+    // Sécurité : un classement tout à zéro alors que des matchs ont été joués est une mauvaise lecture
+    if (classement.length && classement.every(e => e.pts === 0 && e.j === 0) && matchs.some(m => m.scoreNous !== null)) {
+      console.warn('  classement lu à zéro : ignoré, ancien classement conservé');
+      classement = [];
+    }
   } catch (e) {
     console.warn(`  classement illisible : ${e.message}`);
   }

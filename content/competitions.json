@@ -136,51 +136,51 @@
     ],
     "classement": [
       {
-        "equipe": "RC Val de Bievre",
-        "pts": 0,
-        "j": 0,
+        "equipe": "RC Val de Bièvre",
+        "pts": 19,
+        "j": 5,
         "nous": false
       },
       {
         "equipe": "Racing Nanterre Rugby",
-        "pts": 0,
-        "j": 0,
+        "pts": 18,
+        "j": 4,
         "nous": true
       },
       {
         "equipe": "AC Bobigny 93 Rugby",
-        "pts": 0,
-        "j": 0,
+        "pts": 15,
+        "j": 5,
         "nous": false
       },
       {
         "equipe": "RC Ballancourtois",
-        "pts": 0,
-        "j": 0,
+        "pts": 9,
+        "j": 4,
         "nous": false
       },
       {
         "equipe": "Rugby Club Les Mureaux",
-        "pts": 0,
-        "j": 0,
+        "pts": 8,
+        "j": 5,
         "nous": false
       },
       {
         "equipe": "RC Paris 15 - 3",
-        "pts": 0,
-        "j": 0,
+        "pts": 8,
+        "j": 5,
         "nous": false
       },
       {
         "equipe": "Viry Chatillon Rugby Club",
-        "pts": 0,
-        "j": 0,
+        "pts": 5,
+        "j": 5,
         "nous": false
       },
       {
         "equipe": "Provins Rugby Club",
-        "pts": 0,
-        "j": 0,
+        "pts": 5,
+        "j": 5,
         "nous": false
       }
     ],
