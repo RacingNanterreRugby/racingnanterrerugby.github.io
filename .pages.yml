@@ -93,7 +93,7 @@ content:
         label: Groupe
         type: select
         options:
-          values: ["École de rugby", "Jeunes", "Adultes"]
+          values: ["École de rugby", "Jeunes", "Adultes", "Rugby adapté"]
       - { name: age, label: "Âge / années de naissance", type: string }
       - { name: description, label: Présentation, type: text }
       - { name: photo, label: "Photo de la catégorie (carte et bandeau)", type: image }
@@ -108,7 +108,7 @@ content:
             options:
               values: [Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche]
           - { name: horaire, label: "Horaire (ex. 14h00 – 15h30)", type: string }
-      - { name: lieu, label: Lieu, type: string }
+      - { name: lieu, label: "Stade (nom exact d'un stade de la liste « Infos générales › Stades »)", type: string }
       - name: staff
         label: "Encadrement (le premier = responsable)"
         type: object
@@ -217,6 +217,14 @@ content:
           - { name: titre, label: Titre, type: string }
           - { name: texte, label: Texte, type: text }
       - { name: adresse, label: Adresse, type: string }
+      - name: stades
+        label: Stades
+        type: object
+        list: true
+        fields:
+          - { name: nom, label: Nom du stade, type: string }
+          - { name: adresse, label: Adresse, type: string }
+          - { name: plan, label: Lien Google Maps, type: string }
       - { name: lienPlan, label: Lien Google Maps, type: string }
       - { name: telephone, label: Téléphone, type: string }
       - { name: email, label: E-mail, type: string }

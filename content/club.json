@@ -1,7 +1,7 @@
 {
   "nom": "Racing Nanterre Rugby",
   "saison": "2026-2027",
-  "slogan": "Le rugby ciel & blanc à Nanterre, de 3 ans à… pas d'âge limite.",
+  "slogan": "Le rugby à Nanterre, de 3 ans à… pas d'âge limite.",
   "photosAccueil": [
     "photos/match-coup-envoi.jpg",
     "photos/avants.jpg",
@@ -53,7 +53,19 @@
     {
       "ico": "🍻",
       "titre": "Convivialité",
-      "texte": "La troisième mi-temps fait aussi partie du jeu."
+      "texte": "Les moments festifs et le partage font aussi partie de la vie du club."
+    }
+  ],
+  "stades": [
+    {
+      "nom": "Stade Vincent Pascusi",
+      "adresse": "133 avenue de la Commune de Paris, 92000 Nanterre",
+      "plan": "https://www.google.fr/maps/place/48.9065,2.2057"
+    },
+    {
+      "nom": "Stade Jean Guimier",
+      "adresse": "107 avenue Pablo Picasso, 92000 Nanterre",
+      "plan": "https://www.google.fr/maps/place/48.8886,2.2236"
     }
   ]
 }

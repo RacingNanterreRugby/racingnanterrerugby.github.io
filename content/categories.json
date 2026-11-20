@@ -13,7 +13,7 @@
         "horaire": "10h00 – 11h30"
       }
     ],
-    "lieu": "Stade du club",
+    "lieu": "Stade Vincent Pascusi",
     "email": "",
     "tel": "",
     "staff": [
@@ -48,7 +48,7 @@
         "horaire": "10h00 – 11h30"
       }
     ],
-    "lieu": "Stade du club",
+    "lieu": "Stade Vincent Pascusi",
     "email": "",
     "tel": "",
     "staff": [
@@ -83,7 +83,7 @@
         "horaire": "10h00 – 12h00"
       }
     ],
-    "lieu": "Stade du club",
+    "lieu": "Stade Vincent Pascusi",
     "email": "",
     "tel": "",
     "staff": [
@@ -118,7 +118,7 @@
         "horaire": "10h00 – 12h00"
       }
     ],
-    "lieu": "Stade du club",
+    "lieu": "Stade Vincent Pascusi",
     "email": "",
     "tel": "",
     "staff": [
@@ -153,7 +153,7 @@
         "horaire": "18h00 – 19h30"
       }
     ],
-    "lieu": "Stade du club",
+    "lieu": "Stade Vincent Pascusi",
     "email": "",
     "tel": "",
     "staff": [
@@ -188,7 +188,7 @@
         "horaire": "18h30 – 20h00"
       }
     ],
-    "lieu": "Stade du club",
+    "lieu": "Stade Vincent Pascusi",
     "email": "",
     "tel": "",
     "staff": [
@@ -223,7 +223,7 @@
         "horaire": "19h30 – 21h00"
       }
     ],
-    "lieu": "Stade du club",
+    "lieu": "Stade Vincent Pascusi",
     "email": "",
     "tel": "",
     "staff": [
@@ -258,7 +258,7 @@
         "horaire": "20h00 – 22h00"
       }
     ],
-    "lieu": "Stade du club",
+    "lieu": "Stade Vincent Pascusi",
     "email": "",
     "tel": "",
     "staff": [
@@ -292,9 +292,13 @@
       {
         "jour": "Mercredi",
         "horaire": "20h00 – 22h00"
+      },
+      {
+        "jour": "Vendredi",
+        "horaire": "20h00 – 22h00"
       }
     ],
-    "lieu": "Stade du club",
+    "lieu": "Stade Vincent Pascusi",
     "email": "",
     "tel": "",
     "staff": [
@@ -325,7 +329,7 @@
         "horaire": "10h00 – 12h00"
       }
     ],
-    "lieu": "Stade du club",
+    "lieu": "Stade Vincent Pascusi",
     "email": "",
     "tel": "",
     "staff": [
@@ -337,6 +341,32 @@
       {
         "nom": "À compléter",
         "role": "Entraîneur",
+        "photo": ""
+      }
+    ],
+    "photos": []
+  },
+  {
+    "id": "adapte",
+    "groupe": "Rugby adapté",
+    "nom": "ADA",
+    "titre": "Rugby adapté",
+    "age": "Pour tous",
+    "description": "Le rugby adapté accueille les personnes en situation de handicap mental ou psychique, dans un cadre bienveillant, avec des éducateurs formés.",
+    "photo": "",
+    "entrainements": [
+      {
+        "jour": "Samedi",
+        "horaire": "À compléter"
+      }
+    ],
+    "lieu": "Stade Vincent Pascusi",
+    "email": "",
+    "tel": "",
+    "staff": [
+      {
+        "nom": "À compléter",
+        "role": "Responsable de catégorie",
         "photo": ""
       }
     ],

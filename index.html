@@ -309,7 +309,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <a class="brand" href="#accueil" aria-label="Accueil Racing Nanterre Rugby">
       <img src="photos/logo.png" alt="Blason du Racing Nanterre Rugby">
-      <span><b>Racing Nanterre</b><small>Rugby · Ciel &amp; Blanc</small></span>
+      <span><b>Racing Nanterre</b><small>Rugby · Nanterre</small></span>
     </a>
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
     <nav class="nav" aria-label="Navigation principale"></nav>
@@ -321,7 +321,7 @@ footer a:hover{color:#fff}
 <footer>
   <div class="wrap">
     <div class="grille" id="pied"></div>
-    <div class="bas"><span>© <span id="annee"></span> Racing Nanterre Rugby — Association loi 1901 affiliée à la FFR</span><span>Fait avec passion, en ciel &amp; blanc</span></div>
+    <div class="bas"><span>© <span id="annee"></span> Racing Nanterre Rugby — Association loi 1901 affiliée à la FFR</span><span>Fait avec passion, à Nanterre</span></div>
   </div>
 </footer>
 
@@ -370,6 +370,7 @@ const liensFFR = (c, petit) => c.ffr ? `<div class="liens-ffr${petit?' petit':''
     <a class="btn-ffr" href="${esc(c.ffr)}/calendrier-resultats" target="_blank" rel="noopener"><span>🏉</span>Résultats</a>
     <a class="btn-ffr" href="${esc(c.ffr)}/classements" target="_blank" rel="noopener"><span>🏆</span>Classement</a>
   </div>` : '';
+const stadeDe = c => (CLUB.stades||[]).find(s => s.nom === c.lieu) || {};
 const actusTriees = () => [...CLUB.actus].sort((a,b)=>d(b.date)-d(a.date));
 const initiales = n => !n || n.includes('compléter') ? '?' : n.split(/\s+/).map(x=>x[0]).join('').slice(0,2).toUpperCase();
 const DEGRADES = [
@@ -461,7 +462,7 @@ accueil(){
   </section>
 
   <div class="wrap"><div class="chiffres apparait">
-    <div class="chiffre"><b>${nbCat}</b><span>catégories, du baby rugby aux loisirs</span></div>
+    <div class="chiffre"><b>${nbCat}</b><span>catégories, du baby rugby au rugby adapté</span></div>
     <div class="chiffre"><b>${CLUB.licencies}</b><span>licenciés au club</span></div>
     <div class="chiffre"><b>1★</b><span>label FFR école de rugby</span></div>
     <div class="chiffre"><b>3</b><span>ans pour commencer le rugby</span></div>
@@ -540,7 +541,7 @@ categorie(id){
       <div class="carte"><div class="carte-corps">
         <h3 style="margin-bottom:1rem">Entraînements</h3>
         ${c.entrainements.map(e=>`<div class="creneau"><b>${esc(e.jour)}</b><span>${esc(e.horaire)}</span></div>`).join('')}
-        <div class="info" style="margin-top:1.2rem"><div class="ico">📍</div><div><small>Lieu</small>${esc(c.lieu)} — ${esc(CLUB.adresse)}<br><a href="${CLUB.lienPlan}" target="_blank" rel="noopener" style="font-weight:600;font-size:.9rem">Voir sur le plan →</a></div></div>
+        <div class="info" style="margin-top:1.2rem"><div class="ico">📍</div><div><small>Lieu</small>${esc(c.lieu)}${stadeDe(c).adresse ? ` — ${esc(stadeDe(c).adresse)}` : ''}<br><a href="${esc(stadeDe(c).plan || CLUB.lienPlan)}" target="_blank" rel="noopener" style="font-weight:600;font-size:.9rem">Voir sur le plan →</a></div></div>
         <div class="info" style="margin-top:.9rem"><div class="ico">🎂</div><div><small>Âge</small>${esc(c.age)}</div></div>
       </div></div>
       ${compets.length ? `<div class="carte"><div class="carte-corps">
@@ -597,7 +598,7 @@ photos(){
 },
 
 boutique(){
-  return heroPage('Boutique officielle · Macron', 'Portez le ciel &amp; blanc', 'Maillots, sweats et accessoires aux couleurs du club, sur la boutique officielle de notre équipementier Macron.', '', CLUB.photosPages.boutique) +
+  return heroPage('Boutique officielle · Macron', 'Portez les couleurs du club', 'Maillots, sweats et accessoires aux couleurs du club, sur la boutique officielle de notre équipementier Macron.', '', CLUB.photosPages.boutique) +
   `<section class="section"><div class="wrap">
     <div class="bandeau" style="margin-bottom:2.5rem">
       <div><h2>La boutique en ligne</h2><p style="margin-top:.4rem">Tous les produits officiels du club sur la boutique Macron.</p></div>
