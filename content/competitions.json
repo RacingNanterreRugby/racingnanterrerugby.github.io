@@ -63,7 +63,7 @@
       },
       {
         "date": "2026-12-13",
-        "adv": "RC Val de Bièvre",
+        "adv": "RC Val de Bievre",
         "dom": false,
         "scoreNous": null,
         "scoreEux": null,
@@ -126,7 +126,7 @@
       },
       {
         "date": "2027-03-28",
-        "adv": "RC Val de Bièvre",
+        "adv": "RC Val de Bievre",
         "dom": true,
         "scoreNous": null,
         "scoreEux": null,
@@ -136,51 +136,51 @@
     ],
     "classement": [
       {
-        "equipe": "RC Val de Bièvre",
-        "pts": 19,
-        "j": 5,
+        "equipe": "RC Val de Bievre",
+        "pts": 0,
+        "j": 0,
         "nous": false
       },
       {
         "equipe": "Racing Nanterre Rugby",
-        "pts": 18,
-        "j": 4,
+        "pts": 0,
+        "j": 0,
         "nous": true
       },
       {
         "equipe": "AC Bobigny 93 Rugby",
-        "pts": 15,
-        "j": 5,
+        "pts": 0,
+        "j": 0,
         "nous": false
       },
       {
         "equipe": "RC Ballancourtois",
-        "pts": 9,
-        "j": 4,
+        "pts": 0,
+        "j": 0,
         "nous": false
       },
       {
         "equipe": "Rugby Club Les Mureaux",
-        "pts": 8,
-        "j": 5,
+        "pts": 0,
+        "j": 0,
         "nous": false
       },
       {
         "equipe": "RC Paris 15 - 3",
-        "pts": 8,
-        "j": 5,
+        "pts": 0,
+        "j": 0,
         "nous": false
       },
       {
         "equipe": "Viry Chatillon Rugby Club",
-        "pts": 5,
-        "j": 5,
+        "pts": 0,
+        "j": 0,
         "nous": false
       },
       {
         "equipe": "Provins Rugby Club",
-        "pts": 5,
-        "j": 5,
+        "pts": 0,
+        "j": 0,
         "nous": false
       }
     ],
@@ -193,8 +193,92 @@
     "championnat": "Féminines Régionales à X – Championnat territorial (Île-de-France)",
     "ffr": "https://monclubhouse.ffr.fr/clubs/racing-nanterre-rugby/competitions/ile-de-france-feminines-regionales-a-x-championnat-territorial/brassage-50374",
     "widget": "",
-    "matchs": [],
-    "classement": []
+    "matchs": [
+      {
+        "date": "2026-10-04",
+        "adv": "Rst Montigny/versailles F+18",
+        "dom": true,
+        "scoreNous": 77,
+        "scoreEux": 14,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2026-10-11",
+        "adv": "Rst Melun/ruguby Sud 77 F+18",
+        "dom": true,
+        "scoreNous": 25,
+        "scoreEux": 0,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2026-10-18",
+        "adv": "Rst Etampes/arpajon F+18",
+        "dom": false,
+        "scoreNous": 44,
+        "scoreEux": 50,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2026-11-08",
+        "adv": "Rugby Club Du Pays de Nemours",
+        "dom": true,
+        "scoreNous": 52,
+        "scoreEux": 20,
+        "heure": "15h00",
+        "info": ""
+      },
+      {
+        "date": "2026-11-22",
+        "adv": "Rst Pontault/lagny/gto F+18",
+        "dom": false,
+        "scoreNous": null,
+        "scoreEux": null,
+        "heure": "15h00",
+        "info": ""
+      }
+    ],
+    "classement": [
+      {
+        "equipe": "Rst Etampes/arpajon F+18",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "Racing Nanterre Rugby",
+        "pts": 0,
+        "j": 0,
+        "nous": true
+      },
+      {
+        "equipe": "Rugby Club Du Pays de Nemours",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "Rst Pontault/lagny/gto F+18",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "Rst Montigny/versailles F+18",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "Rst Melun/ruguby Sud 77 F+18",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      }
+    ],
+    "majLe": "2026-11-20"
   },
   {
     "id": "juniors",
@@ -204,7 +288,44 @@
     "ffr": "https://monclubhouse.ffr.fr/clubs/racing-nanterre-rugby/competitions/ile-de-france-regional-1-u19-championnat-territorial/qualification-50474",
     "widget": "",
     "matchs": [],
-    "classement": []
+    "classement": [
+      {
+        "equipe": "Rst Gto / Lagny / Pontault M19",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "Rugby Club de Suresnes - Hauts De Seine",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "RC Paris Neuilly Sur Seine",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "Rst Bagneux/antony M19",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "Rueil AC",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "Rst Houilles/nanterre M19",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      }
+    ]
   },
   {
     "id": "cadets-r1",
@@ -214,7 +335,32 @@
     "ffr": "https://monclubhouse.ffr.fr/clubs/racing-nanterre-rugby/competitions/ile-de-france-regional-1-u16-championnat-territorial/brassage-50329",
     "widget": "",
     "matchs": [],
-    "classement": []
+    "classement": [
+      {
+        "equipe": "Rst Meaux/coulommiers M16",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "Rst Noisy Le Grand/champs/chelles M16",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "Union Rugby Centre 78",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "Rst Houilles/nanterre M16",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      }
+    ]
   },
   {
     "id": "cadets-r2",
@@ -224,6 +370,37 @@
     "ffr": "https://monclubhouse.ffr.fr/clubs/racing-nanterre-rugby/competitions/ile-de-france-regional-2-u16/qualification-50478",
     "widget": "",
     "matchs": [],
-    "classement": []
+    "classement": [
+      {
+        "equipe": "Rst Houilles/nanterre M16",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "Senlis / Chantilly M16",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "Rst Creteil Choisy/maisons Alfort M16",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "Rugby Club de Courbevoie",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      },
+      {
+        "equipe": "SCUF",
+        "pts": 0,
+        "j": 0,
+        "nous": false
+      }
+    ]
   }
 ]
