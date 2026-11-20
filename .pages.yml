@@ -229,6 +229,7 @@ content:
       - { name: telephone, label: Téléphone, type: string }
       - { name: email, label: E-mail, type: string }
       - { name: licencies, label: Nombre de licenciés, type: number }
+      - { name: etoilesEDR, label: "Label FFR de l'école de rugby (nombre d'étoiles)", type: number }
       - { name: boutiqueUrl, label: Lien de la boutique en ligne, type: string }
       - { name: inscriptionUrl, label: "Lien d'inscription / adhésion (facultatif)", type: string }
       - name: reseaux
