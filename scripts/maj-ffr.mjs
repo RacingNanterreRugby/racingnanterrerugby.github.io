@@ -60,9 +60,12 @@ async function lireCompetition(page, base) {
   try {
     await page.goto(`${base}/classements`, { waitUntil: 'domcontentloaded', timeout: 60000 });
     await page.waitForSelector('table tbody tr td', { timeout: 30000 });
-    // Les chiffres du classement sont animés (ils partent de 0) : on attend qu'ils soient stables
+    // Les chiffres du classement sont animés (ils partent de 0) et l'animation ne démarre
+    // que quand le tableau est visible : on fait défiler chaque ligne, puis on attend qu'ils soient stables
     let lignes = [], avant = '';
     for (let essai = 0; essai < 10; essai++) {
+      await page.$$eval('table tbody tr', trs => trs.forEach(tr => tr.scrollIntoView({ block: 'center' })));
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
       await page.waitForTimeout(1500);
       lignes = await page.$$eval('table tbody tr', trs => trs.map(tr => [...tr.querySelectorAll('td')].map(td => td.textContent.replace(/\s+/g, ' ').trim())));
       const empreinte = JSON.stringify(lignes);
@@ -87,7 +90,7 @@ async function lireCompetition(page, base) {
 async function main() {
   const competitions = JSON.parse(await readFile(FICHIER, 'utf8'));
   const navigateur = await chromium.launch();
-  const page = await navigateur.newPage({ locale: 'fr-FR' });
+  const page = await navigateur.newPage({ locale: 'fr-FR', viewport: { width: 1280, height: 4000 } });
   let modifiees = 0;
 
   for (const c of competitions) {
