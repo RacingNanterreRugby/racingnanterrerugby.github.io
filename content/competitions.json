@@ -47,8 +47,8 @@
         "date": "2026-11-22",
         "adv": "AC Bobigny 93 Rugby",
         "dom": false,
-        "scoreNous": null,
-        "scoreEux": null,
+        "scoreNous": 19,
+        "scoreEux": 28,
         "heure": "13h30",
         "info": ""
       },
@@ -184,7 +184,7 @@
         "nous": false
       }
     ],
-    "majLe": "2026-11-20",
+    "majLe": "2026-11-23",
     "classementLe": "2026-11-20"
   },
   {
@@ -235,8 +235,8 @@
         "date": "2026-11-22",
         "adv": "Rst Pontault/lagny/gto F+18",
         "dom": false,
-        "scoreNous": null,
-        "scoreEux": null,
+        "scoreNous": 47,
+        "scoreEux": 14,
         "heure": "15h00",
         "info": ""
       }
@@ -279,7 +279,7 @@
         "nous": false
       }
     ],
-    "majLe": "2026-11-20",
+    "majLe": "2026-11-23",
     "classementLe": "2026-11-20"
   },
   {
@@ -312,8 +312,8 @@
         "date": "2026-11-21",
         "adv": "Rst Gto / Lagny / Pontault M19",
         "dom": true,
-        "scoreNous": null,
-        "scoreEux": null,
+        "scoreNous": 5,
+        "scoreEux": 77,
         "heure": "15h00",
         "info": ""
       },
@@ -420,7 +420,7 @@
       }
     ],
     "equipe": "Houilles/nanterre",
-    "majLe": "2026-11-20",
+    "majLe": "2026-11-23",
     "classementLe": "2026-11-20"
   },
   {
@@ -486,7 +486,7 @@
       }
     ],
     "equipe": "Houilles/nanterre",
-    "majLe": "2026-11-20",
+    "majLe": "2026-11-23",
     "classementLe": "2026-11-20"
   },
   {
@@ -603,7 +603,7 @@
       }
     ],
     "equipe": "Houilles/nanterre",
-    "majLe": "2026-11-20",
+    "majLe": "2026-11-23",
     "classementLe": "2026-11-20"
   }
 ]
