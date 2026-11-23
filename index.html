@@ -137,26 +137,18 @@ main{min-height:70vh}
 .repere span{color:var(--texte-2);font-size:.92rem}
 @media (max-width:760px){.reperes{grid-template-columns:1fr 1fr}.repere{border-right:0;padding:1.2rem 0!important;border-bottom:1px solid var(--trait)}.repere:nth-child(odd){padding-right:1rem!important}.repere b{font-size:2rem}}
 
-/* ---------- Accueil : échelle des âges ---------- */
-.echelle{position:relative;margin-top:1rem}
-.piste{display:grid;grid-template-columns:repeat(8,1fr);position:relative}
-.piste::before{content:"";position:absolute;left:0;right:0;top:27px;height:4px;background:linear-gradient(90deg,var(--ciel),var(--marine));border-radius:2px}
-.palier{position:relative;text-decoration:none;padding-top:0;display:flex;flex-direction:column;align-items:flex-start;padding-right:.6rem}
-.palier .pastille{width:58px;height:58px;border-radius:50%;background:#fff;border:4px solid var(--ciel);display:grid;place-items:center;font-family:var(--affiche);font-weight:800;font-size:1.15rem;position:relative;transition:background .15s,border-color .15s,color .15s}
-.palier:nth-child(n+6) .pastille{border-color:var(--marine-2)}
-.palier:hover .pastille{background:var(--marine);color:#fff;border-color:var(--marine)}
-.palier .nom{font-weight:700;margin-top:.8rem;line-height:1.25}
-.palier .age{font-size:.85rem;color:var(--texte-2)}
-.autres{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2.2rem;align-items:center}
-.autres span{color:var(--texte-2);font-weight:600;margin-right:.3rem}
-.puce{display:inline-flex;align-items:center;min-height:44px;padding:.5rem 1rem;border:1px solid var(--trait);border-radius:999px;background:#fff;text-decoration:none;font-weight:600}
-.puce:hover{border-color:var(--marine)}
-@media (max-width:860px){
-  .piste{grid-template-columns:1fr;gap:0}
-  .piste::before{left:27px;right:auto;top:10px;bottom:10px;width:4px;height:auto;background:linear-gradient(180deg,var(--ciel),var(--marine))}
-  .palier{flex-direction:row;align-items:center;gap:1rem;padding:.45rem 0}
-  .palier .nom{margin-top:0}
-}
+/* ---------- Accueil : toutes les catégories par groupe ---------- */
+.familles{display:grid;grid-template-columns:5fr 3fr 4fr 3fr;gap:2rem 2.5rem}
+@media (max-width:1000px){.familles{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.familles{grid-template-columns:1fr;gap:2rem}}
+.famille h3{font-size:1.35rem;padding-bottom:.6rem;border-bottom:3px solid var(--teinte,var(--marine));margin-bottom:.3rem}
+.famille.f0{--teinte:var(--ciel)}.famille.f1{--teinte:var(--marine)}.famille.f2{--teinte:var(--or)}.famille.f3{--teinte:var(--pelouse)}
+.palier{display:flex;align-items:center;gap:.9rem;text-decoration:none;padding:.6rem 0;border-bottom:1px solid var(--trait);min-height:60px}
+.palier .pastille{flex:none;width:52px;height:52px;border-radius:50%;background:#fff;border:3px solid var(--teinte,var(--marine));display:grid;place-items:center;font-family:var(--affiche);font-weight:800;font-size:1.05rem;transition:background .15s,color .15s}
+.palier:hover .pastille{background:var(--marine);border-color:var(--marine);color:#fff}
+.palier:hover .nom{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+.palier .nom{display:block;font-weight:700;line-height:1.25}
+.palier .age{display:block;font-size:.85rem;color:var(--texte-2)}
 
 /* ---------- Bloc présentation ---------- */
 .deux{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
@@ -542,8 +534,7 @@ accueil(){
     return m ? {...m, equipe:c.nom, compet:c.id} : null;
   }).filter(Boolean).sort((a,b)=>d(a.date)-d(b.date)).slice(0,4);
   const derniers = tousMatchs().filter(joue).sort((a,b)=>d(b.date)-d(a.date)).slice(0,5);
-  const parAge = ['m6','m8','m10','m12','m14','m16','m19','seniors'].map(id=>CLUB.categories.find(c=>c.id===id)).filter(Boolean);
-  const autres = CLUB.categories.filter(c=>!parAge.includes(c));
+  const familles = [...new Set(CLUB.categories.map(c=>c.groupe))];
   const actus = actusTriees();
   const photos = CLUB.photosAccueil || [];
   return `
@@ -575,12 +566,10 @@ accueil(){
   </div></div>
 
   <section class="section"><div class="wrap">
-    <div class="tete"><div><h2>Une place pour chaque âge</h2><p>Du baby rugby jusqu'aux seniors, chaque âge a son groupe et ses éducateurs.</p></div><a class="lien" href="#categories">Toutes les catégories</a></div>
-    <div class="echelle"><div class="piste">
-      ${parAge.map(c=>`<a class="palier" href="#cat-${c.id}"><span class="pastille">${esc(c.nom)}</span><span><span class="nom">${esc(c.titre)}</span><br><span class="age">${esc(c.age)}</span></span></a>`).join('')}
-    </div>
-    ${autres.length ? `<div class="autres"><span>Et aussi</span>${autres.map(c=>`<a class="puce" href="#cat-${c.id}">${esc(c.titre)}</a>`).join('')}</div>` : ''}
-    </div>
+    <div class="tete"><div><h2>Une place pour chaque âge</h2><p>Du baby rugby dès 3 ans aux seniors, avec les féminines, le rugby loisir et le rugby adapté.</p></div><a class="lien" href="#categories">Toutes les catégories</a></div>
+    <div class="familles">${familles.map((g,i)=>`<div class="famille f${i%4}"><h3>${esc(g)}</h3>
+      ${CLUB.categories.filter(c=>c.groupe===g).map(c=>`<a class="palier" href="#cat-${c.id}"><span class="pastille">${esc(c.nom)}</span><span><span class="nom">${esc(c.titre)}</span><span class="age">${esc(c.age)}</span></span></a>`).join('')}
+    </div>`).join('')}</div>
   </div></section>
 
   ${actus.length ? `<section class="section brume"><div class="wrap">
