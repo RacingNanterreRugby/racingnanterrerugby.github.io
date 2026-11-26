@@ -184,7 +184,7 @@
         "nous": false
       }
     ],
-    "majLe": "2026-11-23",
+    "majLe": "2026-11-26",
     "classementLe": "2026-11-20"
   },
   {
@@ -279,7 +279,7 @@
         "nous": false
       }
     ],
-    "majLe": "2026-11-23",
+    "majLe": "2026-11-26",
     "classementLe": "2026-11-20"
   },
   {
@@ -420,7 +420,7 @@
       }
     ],
     "equipe": "Houilles/nanterre",
-    "majLe": "2026-11-23",
+    "majLe": "2026-11-26",
     "classementLe": "2026-11-20"
   },
   {
@@ -486,7 +486,7 @@
       }
     ],
     "equipe": "Houilles/nanterre",
-    "majLe": "2026-11-23",
+    "majLe": "2026-11-26",
     "classementLe": "2026-11-20"
   },
   {
@@ -519,8 +519,8 @@
         "date": "2026-11-22",
         "adv": "Rst Creteil Choisy/maisons Alfort M16",
         "dom": false,
-        "scoreNous": null,
-        "scoreEux": null,
+        "scoreNous": 24,
+        "scoreEux": 36,
         "heure": "10h00",
         "info": ""
       },
@@ -603,7 +603,7 @@
       }
     ],
     "equipe": "Houilles/nanterre",
-    "majLe": "2026-11-23",
+    "majLe": "2026-11-26",
     "classementLe": "2026-11-20"
   }
 ]
